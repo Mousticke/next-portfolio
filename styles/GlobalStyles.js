@@ -16,16 +16,26 @@ const GlobalStyles = createGlobalStyle`
         --h6: .8rem;
     }
 
-    * {
+    *, 
+    *:before,
+    *:after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         
     }
 
+    ::selection {
+      background-color: ${(props) => props.theme.colors.selection_background};
+      color: ${(props) => props.theme.colors.selection_color};
+    }
+
     html {
         height: 100%;
         scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: ${(props) => props.theme.colors.scrollbar} 
+        ${(props) => props.theme.colors.background};;
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
@@ -63,6 +73,18 @@ const GlobalStyles = createGlobalStyle`
       overflow-x: hidden;
       background-color: ${(props) => props.theme.colors.background};
       color: ${(props) => props.theme.colors.text};    
+
+      &::-webkit-scrollbar {
+         width: 12px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(props) => props.theme.colors.scrollbar};
+        border: 3px solid ${(props) => props.theme.colors.background};
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: ${(props) => props.theme.colors.background};
+      }
     }
     
     #__next{
@@ -73,7 +95,7 @@ const GlobalStyles = createGlobalStyle`
 
         &.blur {
             overflow: hidden;
-            #wrapper{
+            #wrapper > *{
                 filter: blur(5px) brightness(0.7);
                 transition: ${transitionAll};
                 pointer-events: none;

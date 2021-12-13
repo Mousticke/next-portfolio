@@ -6,6 +6,9 @@ const theme = {
   },
   colors: {
     background: "hsl(215deg 62% 6%)",
+    scrollbar: "hsl(215deg 29% 16%)",
+    selection_background: "hsl(215deg 45% 15%)",
+    selection_color: "hsl(215deg 25% 96%)",
     //background: "hsl(215deg 23% 16%)",
     landing: "radial-gradient(50% 50% at 50% 50%, #2f3e52 27.6%, #202833 100%)",
     text: "hsl(220deg 66% 91%)",
