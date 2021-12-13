@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Layout from "../Layout/Layout";
-import { Header } from "../components";
-import SocialMedia from "../components/SocialMedia/SocialMedia";
-import CustomRight from "../components/CustomRight/CustomRight";
+import { Header, CustomRight, SocialMedia } from "../components";
 
 export default function Home() {
   return (
