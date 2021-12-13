@@ -10,7 +10,8 @@ const theme = {
     selection_background: "hsl(215deg 45% 15%)",
     selection_color: "hsl(215deg 25% 96%)",
     //background: "hsl(215deg 23% 16%)",
-    landing: "radial-gradient(50% 50% at 50% 50%, #2f3e52 27.6%, #202833 100%)",
+    landing:
+      "radial-gradient(50% 50% at 50% 50%,hsl(215deg 65% 15%) 10%,hsl(215deg 62% 6%) 100%)",
     text: "hsl(220deg 66% 91%)",
     text_slate: "hsl(0deg 0% 69%)",
     bar: "hsl(0deg 0% 37%)",

@@ -11,6 +11,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 70px;
   padding: 0 20px;
+  z-index: 11;
 
   filter: none !important;
   pointer-events: auto !important;

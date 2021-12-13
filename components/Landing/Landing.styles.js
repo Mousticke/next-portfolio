@@ -7,6 +7,7 @@ export const LandingSection = styled.section`
   align-items: center;
   min-height: 100vh;
   padding: 0;
+  background: ${(props) => props.theme.colors.landing};
 `;
 
 export const BitmojiContainer = styled.div`
