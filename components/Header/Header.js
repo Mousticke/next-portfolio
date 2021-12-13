@@ -25,6 +25,8 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import Button from "../Button";
+import socialLinks from "../../config/socialMediaLinks";
+import navLinks from "../../config/navLinks";
 
 function Header() {
   const [showSide, setShowSide] = useState(false);
@@ -39,6 +41,23 @@ function Header() {
       document.querySelector("#__next").className = "";
     }
   }, [showSide]);
+
+  const getSocialIcon = (name) => {
+    switch (name) {
+      case "facebook":
+        return <FaFacebookF />;
+      case "github":
+        return <FaGithub />;
+      case "linkedIn":
+        return <FaLinkedinIn />;
+      case "instagram":
+        return <FaInstagram />;
+      case "stackOverflow":
+        return <FaStackOverflow />;
+      default:
+        return <></>;
+    }
+  };
 
   return (
     <HeaderContainer>
@@ -56,26 +75,14 @@ function Header() {
         </NavLogoContainer>
         <NavLinks>
           <NavList>
-            <NavListItem>
-              <Link href="/">
-                <a>About</a>
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link href="/">
-                <a>Experience</a>
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link href="/">
-                <a>Project</a>
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link href="/">
-                <a>Contact</a>
-              </Link>
-            </NavListItem>
+            {navLinks &&
+              navLinks.map(({ id, url, name }) => (
+                <NavListItem key={id}>
+                  <Link href={url}>
+                    <a>{name}</a>
+                  </Link>
+                </NavListItem>
+              ))}
           </NavList>
         </NavLinks>
         <NavBurgerContainer onClick={toggleSideMenu}>
@@ -88,89 +95,33 @@ function Header() {
         <Aside>
           <AsideNav sideMenuOpen={showSide}>
             <AsideNavList>
-              <AsideNavListItem>
-                <Link href="/">
-                  <a>About</a>
-                </Link>
-              </AsideNavListItem>
-              <AsideNavListItem>
-                <Link href="/">
-                  <a>Experience</a>
-                </Link>
-              </AsideNavListItem>
-              <AsideNavListItem>
-                <Link href="/">
-                  <a>Project</a>
-                </Link>
-              </AsideNavListItem>
-              <AsideNavListItem>
-                <Link href="/">
-                  <a>Contact</a>
-                </Link>
-              </AsideNavListItem>
+              {navLinks &&
+                navLinks.map(({ id, url, name }) => (
+                  <AsideNavListItem key={id}>
+                    <Link href={url}>
+                      <a>{name}</a>
+                    </Link>
+                  </AsideNavListItem>
+                ))}
             </AsideNavList>
           </AsideNav>
           <AsideSocialContainer>
-            <Button
-              style={{ transitionDelay: `${100}ms` }}
-              as={Link}
-              ariaLabel={"facebook"}
-              href={"https://facebook.com"}
-              className={`facebookButton`}
-              backgroundColor="#151b27"
-              size="xs"
-              shape="rounded"
-            >
-              <FaFacebookF />
-            </Button>
-            <Button
-              style={{ transitionDelay: `${100}ms` }}
-              as={Link}
-              ariaLabel={"github"}
-              href={"https://github.com"}
-              className={`githubButton`}
-              backgroundColor="#151b27"
-              size="xs"
-              shape="rounded"
-            >
-              <FaGithub />
-            </Button>
-            <Button
-              style={{ transitionDelay: `${100}ms` }}
-              as={Link}
-              ariaLabel={"linkedIn"}
-              href={"https://linkedIn.com"}
-              className={`linkedInButton`}
-              backgroundColor="#151b27"
-              size="xs"
-              shape="rounded"
-            >
-              <FaLinkedinIn />
-            </Button>
-            <Button
-              style={{ transitionDelay: `${100}ms` }}
-              as={Link}
-              ariaLabel={"instagram"}
-              href={"https://instagram.com"}
-              className={`instagramButton`}
-              backgroundColor="#151b27"
-              size="xs"
-              shape="rounded"
-            >
-              <FaInstagram />
-            </Button>
-            <Button
-              style={{ transitionDelay: `${100}ms` }}
-              as={Link}
-              ariaLabel={"stackOverflow"}
-              href={"https://stackOverflow.com"}
-              className={`stackOverflowButton`}
-              backgroundColor="#151b27"
-              size="xs"
-              shape="rounded"
-            >
-              <FaStackOverflow />
-            </Button>
+            {socialLinks &&
+              socialLinks.map(({ id, url, name }) => (
+                <Button
+                  key={id}
+                  style={{ transitionDelay: `${100}ms` }}
+                  as={Link}
+                  ariaLabel={name}
+                  href={url}
+                  className={`${name}Button`}
+                  backgroundColor="#151b27"
+                  size="xs"
+                  shape="rounded"
+                >
+                  {getSocialIcon(name)}
+                </Button>
+              ))}
           </AsideSocialContainer>
         </Aside>
       </NavSideMenu>
