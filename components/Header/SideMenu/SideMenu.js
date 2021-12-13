@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SocialMedia from "./SocialMedia/SocialMedia";
+import SocialMedia from "./NavSocialMedia/NavSocialMedia";
 import HoCNavLink from "../../HoC/HoCNavLink";
 
 import {

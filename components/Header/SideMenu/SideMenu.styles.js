@@ -80,5 +80,9 @@ export const AsideNavListItem = styled.li`
 
   a {
     color: ${(props) => props.theme.colors.text};
+    transition: ${transitionAll};
+    &:hover {
+      color: ${(props) => props.theme.colors.hover_link};
+    }
   }
 `;

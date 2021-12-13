@@ -9,8 +9,9 @@ const theme = {
     //background: "hsl(215deg 23% 16%)",
     landing: "radial-gradient(50% 50% at 50% 50%, #2f3e52 27.6%, #202833 100%)",
     text: "hsl(220deg 66% 91%)",
+    bar: "hsl(0deg 0% 37%)",
     text_secondary: "hsl(176deg 96% 69%)",
-    //numbering: "hsl(33deg 100% 50%)", orange
+    hover_link: "hsl(176deg 96% 69%)",
     numbering: "hsl(176deg 96% 69%)",
     navbar_aside: "linear-gradient(80deg,#1b27357a 0%,#090a0f75 100%)",
     navbar_box_shadow: "rgba(2, 12, 27, 0.7)",

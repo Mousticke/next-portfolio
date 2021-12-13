@@ -40,7 +40,7 @@ export const NavListItem = styled.li`
     color: ${(props) => props.theme.colors.text};
     transition: ${transitionAll};
     &:hover {
-      color: ${(props) => props.theme.colors.numbering};
+      color: ${(props) => props.theme.colors.hover_link};
     }
     &:before {
       color: ${(props) => props.theme.colors.numbering};
