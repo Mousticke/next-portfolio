@@ -1,4 +1,4 @@
-const socialLinks = [
+const socialMediaLinksData = [
   {
     id: "0",
     name: "facebook",
@@ -26,4 +26,4 @@ const socialLinks = [
   },
 ];
 
-export default socialLinks;
+export default socialMediaLinksData;

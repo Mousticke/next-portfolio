@@ -53,18 +53,16 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: ${(props) => props.theme.fonts.main};
-        line-height: var(--baseline);
+      font-family: ${(props) => props.theme.fonts.main};
+      line-height: var(--baseline);
 	    padding: 0;
 	    margin: 0 auto;  
-        cursor: default;
-        width: 100%;
-        min-height: 100%;
-        overflow-x: hidden;
-        background-color: ${(props) => props.theme.colors.background};
-        color: ${(props) => props.theme.colors.text};
-
-        
+      cursor: default;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      background-color: ${(props) => props.theme.colors.background};
+      color: ${(props) => props.theme.colors.text};    
     }
     
     #__next{
@@ -138,9 +136,10 @@ const GlobalStyles = createGlobalStyle`
         -ms-interpolation-mode: bicubic; /* Improves image quality when scaled in IE7 */
     }
 
-    .facebookButton:hover:before{
+  .facebookButton:hover:before{
         box-shadow: 0 0 15px ${(props) => props.theme.colors.facebookButton};
-    }
+  }
+  
   .facebookButton:hover{
     svg{
       fill: ${(props) => props.theme.colors.facebookButton};
