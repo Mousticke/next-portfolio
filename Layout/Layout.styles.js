@@ -1,9 +1,25 @@
 import styled from "styled-components";
+import breakpoints from "../styles/breakpoints";
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
-export { Container };
+export const MainContainer = styled.main`
+  counter-reset: section 0;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 100vh;
+  padding: 0px 50px;
+
+  @media ${breakpoints.media_screens.landscape_tablet} {
+    padding: 0px 100px;
+  }
+
+  @media ${breakpoints.media_screens.small_desktop} {
+    padding: 0px 150px;
+  }
+`;

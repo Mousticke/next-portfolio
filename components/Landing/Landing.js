@@ -1,15 +1,15 @@
+import Image from "next/image";
+import { LandingSection, BitmojiContainer } from "./Landing.styles";
+import akimHi from "../../public/bitmoji-hi.png";
+
 function Landing() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "2000px",
-      }}
-    >
-      Main page
-    </div>
+    <LandingSection>
+      <BitmojiContainer className="bitmoji">
+        <Image src={akimHi} alt="Akim says hi" loading="lazy" />
+      </BitmojiContainer>
+      <p>Main</p>
+    </LandingSection>
   );
 }
 

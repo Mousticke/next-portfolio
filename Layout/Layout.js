@@ -1,10 +1,10 @@
-import { Container } from "./Layout.styles";
+import { Container, MainContainer } from "./Layout.styles";
 import { Footer } from "../components";
 
 function Layout({ children }) {
   return (
     <Container id="wrapper">
-      <main>{children}</main>
+      <MainContainer>{children}</MainContainer>
       <Footer />
     </Container>
   );
