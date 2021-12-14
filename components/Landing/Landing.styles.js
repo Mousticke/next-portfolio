@@ -8,6 +8,8 @@ export const LandingSection = styled.section`
   min-height: 100vh;
   padding: 0;
   background: ${(props) => props.theme.colors.landing};
+
+  height: 2000px;
 `;
 
 export const BitmojiContainer = styled.div`

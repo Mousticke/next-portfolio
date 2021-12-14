@@ -1,27 +1,25 @@
 import { HeaderContainer } from "./Header.styles";
-import React, { useEffect, useState } from "react";
-
+import breakpoints from "../../styles/breakpoints";
 import navLinksData from "../../config/navLinksData";
-
 import SideMenu from "./SideMenu/SideMenu";
 import Navbar from "./Navbar/Navbar";
+import { useHeaderStyle } from "../../hooks";
 
 function Header() {
-  const [showSide, setShowSide] = useState(false);
+  const { isTop, showSide, setShowSide } = useHeaderStyle({
+    sideMenu: false,
+    top: true,
+    sizeThreshold: breakpoints.px_sizes.landscape_tablet,
+  });
+
   const toggleSideMenu = () => {
     setShowSide((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    if (showSide) {
-      document.querySelector("#__next").className = "blur";
-    } else {
-      document.querySelector("#__next").className = "";
-    }
-  }, [showSide]);
+  console.log(isTop);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer isTop={isTop}>
       <Navbar
         toggleSideMenu={toggleSideMenu}
         sideMenuOpen={showSide}

@@ -20,7 +20,9 @@ const theme = {
     hover_link: "hsl(176deg 96% 69%)",
     numbering: "hsl(176deg 96% 69%)",
     navbar_aside: "linear-gradient(80deg,#1b27357a 0%,#090a0f75 100%)",
-    navbar_box_shadow: "rgba(2, 12, 27, 0.7)",
+    navbar_box_shadow: "rgb(135 165 209 / 68%)",
+    navbar_inner_scrolled:
+      "linear-gradient(80deg,hsl(215deg 82% 9%) 0%,hsl(215deg 62% 6%) 100%)",
     navbar_bar_burger: "hsl(176deg 96% 69%)",
     facebookButton: "#3f85f4",
     linkedInButton: "#0177b5",
