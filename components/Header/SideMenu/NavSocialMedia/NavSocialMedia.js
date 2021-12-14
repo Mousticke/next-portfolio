@@ -1,4 +1,3 @@
-import Link from "next/link";
 import socialLinksData from "../../../../config/socialMediaLinksData";
 import Button from "../../../Utilities/Button";
 import { AsideSocialContainer } from "./NavSocialMedia.styles";

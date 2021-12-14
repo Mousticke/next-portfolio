@@ -3,6 +3,7 @@ const theme = {
   fonts: {
     title: "'Poppins', sans-serif",
     main: "'Poppins', sans-serif",
+    mono: "'Space Mono', sans-serif",
   },
   colors: {
     background: "hsl(215deg 62% 6%)",
