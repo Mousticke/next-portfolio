@@ -75,6 +75,8 @@ export const AsideNavListItem = styled.li`
     display: block;
     content: "0" counter(item) ".";
     color: ${(props) => props.theme.colors.numbering};
+    font-family: ${(props) => props.theme.fonts.mono};
+    font-size: 0.9em;
     margin-bottom: 5px;
   }
 

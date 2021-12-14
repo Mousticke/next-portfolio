@@ -14,7 +14,7 @@ export const NavContainer = styled.nav`
 export const NavLinks = styled.div`
   display: none;
   align-items: center;
-  font-size: 0.6em;
+  font-size: 0.6rem;
 
   @media ${breakpoints.media_screens.landscape_tablet} {
     display: flex;
@@ -44,6 +44,8 @@ export const NavListItem = styled.li`
     }
     &:before {
       color: ${(props) => props.theme.colors.numbering};
+      font-family: ${(props) => props.theme.fonts.mono};
+      font-size: 0.9em;
       content: "0" counter(item) ".";
       margin-right: 5px;
       text-align: right;
