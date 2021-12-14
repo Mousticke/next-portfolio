@@ -11,7 +11,9 @@ export const LandingSection = styled.section`
 `;
 
 export const BitmojiContainer = styled.div`
+  position: relative;
   display: none;
+  max-width: 131px;
   @media ${breakpoints.media_screens.portrait_tablet} {
     display: block;
     margin-right: 10px;

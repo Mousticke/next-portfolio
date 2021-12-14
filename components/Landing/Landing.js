@@ -6,7 +6,14 @@ function Landing() {
   return (
     <LandingSection>
       <BitmojiContainer className="bitmoji">
-        <Image src={akimHi} alt="Akim says hi" loading="lazy" />
+        <Image
+          src={akimHi}
+          alt="Akim says hi"
+          priority={true}
+          layout="responsive"
+          width={131}
+          height={312}
+        />
       </BitmojiContainer>
       <p>Main</p>
     </LandingSection>
