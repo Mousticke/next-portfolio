@@ -10,7 +10,6 @@ function Landing() {
           src={akimHi}
           alt="Akim says hi"
           priority={true}
-          layout="responsive"
           width={131}
           height={312}
         />

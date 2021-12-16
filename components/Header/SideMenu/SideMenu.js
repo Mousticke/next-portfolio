@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SocialMedia from "./NavSocialMedia/NavSocialMedia";
 import HoCNavLink from "../../HoC/HoCNavLink";
-
+import React from "react";
 import {
   NavSideMenu,
   Aside,
@@ -27,4 +27,4 @@ function SideMenu({ sideMenuOpen, navLinksData }) {
   );
 }
 
-export default SideMenu;
+export default React.memo(SideMenu);

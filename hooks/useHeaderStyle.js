@@ -5,39 +5,35 @@ const useHeaderStyle = ({ sideMenu, top, sizeThreshold } = {}) => {
   const [isTop, setIsTop] = useState(top);
   const [showSide, setShowSide] = useState(sideMenu);
 
-  const handleScroll = useCallback(
-    throttle(() => {
-      const topScroll = window.scrollY < 100;
-      if (topScroll !== isTop) {
-        console.log(topScroll);
-        setIsTop(topScroll);
-      }
-    }),
-    [isTop],
-  );
+  const handleWindowScroll = useCallback(() => {
+    const topScroll = window.scrollY < 100;
+    if (topScroll !== isTop) {
+      setIsTop(topScroll);
+    }
+  }, [isTop]);
 
-  const handleResize = useCallback(
-    throttle(() => {
-      if (window.innerWidth > sizeThreshold && showSide) {
-        setShowSide((prevState) => !prevState);
-      }
-    }),
-    [showSide],
-  );
+  const handleWindowResize = useCallback(() => {
+    if (window.innerWidth > sizeThreshold && showSide) {
+      setShowSide((prevState) => !prevState);
+    }
+  }, [showSide, sizeThreshold]);
+
+  const throttledHandleWindowScroll = throttle(handleWindowScroll);
+  const throttledHandleWindowResize = throttle(handleWindowResize);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", throttledHandleWindowScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throttledHandleWindowScroll);
     };
-  }, [handleScroll]);
+  }, [throttledHandleWindowScroll]);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", throttledHandleWindowResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", throttledHandleWindowResize);
     };
-  }, [handleResize]);
+  }, [throttledHandleWindowResize]);
 
   useEffect(() => {
     if (showSide) {

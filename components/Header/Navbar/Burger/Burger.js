@@ -4,6 +4,8 @@ import {
   NavBurgerLines,
 } from "./Burger.styles";
 
+import React from "react";
+
 function Burger({ toggle, sideMenuOpen }) {
   return (
     <NavBurgerContainer onClick={toggle}>
@@ -14,4 +16,4 @@ function Burger({ toggle, sideMenuOpen }) {
   );
 }
 
-export default Burger;
+export default React.memo(Burger);

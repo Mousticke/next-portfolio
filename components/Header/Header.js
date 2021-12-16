@@ -4,6 +4,7 @@ import navLinksData from "../../config/navLinksData";
 import SideMenu from "./SideMenu/SideMenu";
 import Navbar from "./Navbar/Navbar";
 import { useHeaderStyle } from "../../hooks";
+import { useCallback, useMemo, useState } from "react";
 
 function Header() {
   const { isTop, showSide, setShowSide } = useHeaderStyle({
@@ -12,20 +13,24 @@ function Header() {
     sizeThreshold: breakpoints.px_sizes.landscape_tablet,
   });
 
-  const toggleSideMenu = () => {
-    setShowSide((prevState) => !prevState);
-  };
+  const [navLinks] = useState(navLinksData);
 
-  console.log(isTop);
+  const memoizeToggleMenuCallback = useCallback(() => {
+    setShowSide((prevState) => !prevState);
+  }, [setShowSide]);
+
+  const memoizeNavLinksData = useMemo(() => {
+    return navLinks;
+  }, [navLinks]);
 
   return (
     <HeaderContainer isTop={isTop}>
       <Navbar
-        toggleSideMenu={toggleSideMenu}
+        toggleSideMenu={memoizeToggleMenuCallback}
         sideMenuOpen={showSide}
-        navLinksData={navLinksData}
+        navLinksData={memoizeNavLinksData}
       />
-      <SideMenu sideMenuOpen={showSide} navLinksData={navLinksData} />
+      <SideMenu sideMenuOpen={showSide} navLinksData={memoizeNavLinksData} />
     </HeaderContainer>
   );
 }
