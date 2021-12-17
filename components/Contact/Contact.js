@@ -19,8 +19,8 @@ function Contact() {
           alt="Akim thinks for contact"
           loading="lazy"
           layout="responsive"
-          width={110}
-          height={170}
+          width={221}
+          height={329}
         />
       </BitmojiContainer>
 
