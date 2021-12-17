@@ -19,6 +19,7 @@ export default function Home() {
       <Layout>
         <Head>
           <title>Akim Benchiha</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="Akim's Portfolio" />
           <link rel="icon" href="/favicon.ico" />
         </Head>

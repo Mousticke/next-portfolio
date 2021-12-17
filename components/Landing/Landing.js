@@ -11,6 +11,7 @@ import {
   HeroContainer,
 } from "./Landing.styles";
 import akimHi from "../../public/bitmoji-hi.png";
+import Link from "next/link";
 
 function Landing() {
   return (
@@ -36,18 +37,25 @@ function Landing() {
             I&apos;m currently working as a Consulting Engineer at Alcyone
           </HeroSummary>
           <HeroActions>
-            <a href="mailto:akim.benchiha@gmail.com" aria-label="Say Hi">
-              Say Hi
-            </a>
-            <a href="https://github.com/Mousticke" aria-label="Get my Resume">
-              Get my Resume
-            </a>
-            <a
-              href="mailto:info@alcyone-consulting.lu"
-              aria-label="Contact Alcyone"
-            >
-              Contact Alcyone
-            </a>
+            <Link href="mailto:akim.benchiha@gmail.com" passHref={true}>
+              <a rel="noopener noreferrer" aria-label="Say Hi">
+                Say Hi
+              </a>
+            </Link>
+            <Link href="/CV_Akim_BENCHIHA_EN.pdf">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get my Resume"
+              >
+                Get my Resume
+              </a>
+            </Link>
+            <Link href="mailto:info@alcyone-consulting.lu" passHref={true}>
+              <a rel="noopener noreferrer" aria-label="Contact Alcyone">
+                Contact Alcyone
+              </a>
+            </Link>
           </HeroActions>
         </HeroContainer>
       </IntroductionContainer>

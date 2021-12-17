@@ -64,6 +64,9 @@ export const HeroSummary = styled.h3`
 
 export const HeroActions = styled.div`
   margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   a {
     color: ${(props) => props.theme.colors.text_secondary};
     background-color: transparent;
