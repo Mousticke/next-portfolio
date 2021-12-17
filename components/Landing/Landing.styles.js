@@ -101,6 +101,10 @@ export const HeroActions = styled.div`
 `;
 
 export const HeroCitation = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
   blockquote {
     text-align: center;
     transition: ${transitionAll};
@@ -108,6 +112,7 @@ export const HeroCitation = styled.div`
     font-weight: 300;
   }
   p {
+    justify-content: center;
     font-size: 0.8rem;
     margin-top: 0;
     font-style: italic;
@@ -117,9 +122,16 @@ export const HeroCitation = styled.div`
     &:after {
       content: close-quote;
     }
+
+    @media ${breakpoints.media_screens.small_desktop} {
+      font-size: 0.7rem;
+    }
   }
   footer {
-    font-size: 0.83rem;
+    font-size: 0.85rem;
+    @media ${breakpoints.media_screens.small_desktop} {
+      font-size: 0.75rem;
+    }
     color: gray;
     &:before {
       content: "\\2014\\00a0";
