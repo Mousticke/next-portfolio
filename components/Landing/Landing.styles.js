@@ -64,6 +64,10 @@ export const HeroSummary = styled.p`
   @media ${breakpoints.media_screens.portrait_tablet} {
     font-size: 0.9rem;
   }
+
+  @media ${breakpoints.media_screens.small_desktop} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const HeroActions = styled.div`
