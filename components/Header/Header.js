@@ -1,9 +1,9 @@
 import { HeaderContainer } from "./Header.styles";
-import breakpoints from "../../styles/breakpoints";
-import navLinksData from "../../config/navLinksData";
+import breakpoints from "@/styles/breakpoints";
+import navLinksData from "@/config/navLinksData";
 import SideMenu from "./SideMenu/SideMenu";
 import Navbar from "./Navbar/Navbar";
-import { useHeaderStyle } from "../../hooks";
+import { useHeaderStyle } from "@/hooks";
 import { useCallback, useMemo, useState } from "react";
 
 function Header() {

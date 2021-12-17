@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import breakpoints from "../../../../styles/breakpoints";
-import {
-  transitionAll,
-  transitionHamburger,
-} from "../../../../styles/transitions";
+import breakpoints from "@/styles/breakpoints";
+import { transitionAll, transitionHamburger } from "@/styles/transitions";
 
 export const NavBurgerContainer = styled.div`
   display: flex;

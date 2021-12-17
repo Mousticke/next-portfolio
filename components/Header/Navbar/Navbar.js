@@ -2,7 +2,7 @@ import Link from "next/link";
 import Burger from "./Burger/Burger";
 import NavLogo from "./Logo/NavLogo";
 import { NavContainer, NavLinks, NavList, NavListItem } from "./Navbar.styles";
-import HoCNavLink from "../../HoC/HoCNavLink";
+import HoCNavLink from "@/components/HoC/HoCNavLink";
 import React from "react";
 
 function HoCNavLinkDesktop({ navLinksData }) {

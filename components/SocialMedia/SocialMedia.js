@@ -1,7 +1,7 @@
 import { SocialMediaContainer, SocialMediaList } from "./SocialMedia.styles";
-import socialLinksData from "../../config/socialMediaLinksData";
-import { getSocialIcon } from "../Utilities/SocialMedia";
-import Button from "../Utilities/Button";
+import socialLinksData from "@/config/socialMediaLinksData";
+import { getSocialIcon } from "@/components/Utilities/SocialMedia";
+import Button from "@/components/Utilities/Button";
 
 function SocialMedia() {
   return (

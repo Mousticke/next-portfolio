@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import breakpoints from "../../styles/breakpoints";
-import { transitionAll } from "../../styles/transitions";
+import breakpoints from "@/styles/breakpoints";
+import { transitionAll } from "@/styles/transitions";
 
 export const HeaderContainer = styled.header`
   display: flex;

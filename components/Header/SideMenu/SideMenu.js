@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SocialMedia from "./NavSocialMedia/NavSocialMedia";
-import HoCNavLink from "../../HoC/HoCNavLink";
+import HoCNavLink from "@/components/HoC/HoCNavLink";
 import React from "react";
 import {
   NavSideMenu,

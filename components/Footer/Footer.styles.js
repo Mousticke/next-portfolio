@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { transitionAll } from "../../styles/transitions";
-import breakpoints from "../../styles/breakpoints";
+import { transitionAll } from "@/styles/transitions";
+import breakpoints from "@/styles/breakpoints";
 
 export const FooterContainer = styled.footer`
   display: flex;

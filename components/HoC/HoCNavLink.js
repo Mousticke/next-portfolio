@@ -4,7 +4,7 @@ const HoCNavLink = (
   WrappedComponent,
   ListItemComponent,
   LinkComponent,
-  navLinks,
+  navLinks
 ) => {
   return (
     <WrappedComponent>

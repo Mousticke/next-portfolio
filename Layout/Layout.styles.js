@@ -20,6 +20,6 @@ export const MainContainer = styled.main`
   }
 
   @media ${breakpoints.media_screens.small_desktop} {
-    padding: 0px 150px;
+    padding: 0px 80px;
   }
 `;

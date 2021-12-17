@@ -96,7 +96,7 @@ const GlobalStyles = createGlobalStyle`
         &.blur {
             overflow: hidden;
             #wrapper > *{
-                filter: blur(5px) brightness(0.7);
+                filter: blur(12px) brightness(0.7);
                 transition: ${transitionAll};
                 pointer-events: none;
                 user-select: none;
@@ -143,7 +143,10 @@ const GlobalStyles = createGlobalStyle`
         line-height: var(--h5);
     }
 
-    
+    button{
+      font-family: ${(props) => props.theme.fonts.mono};
+    }
+
     a {
         text-decoration: none;
     }

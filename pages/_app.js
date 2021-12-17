@@ -1,4 +1,4 @@
-import GlobalTheme from "../styles/GlobalTheme";
+import GlobalTheme from "@/styles/GlobalTheme";
 
 function App({ Component, pageProps }) {
   return (

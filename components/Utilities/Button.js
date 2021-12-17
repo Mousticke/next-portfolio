@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { transitionAll } from "../../styles/transitions";
+import { transitionAll } from "@/styles/transitions";
 
 const StyledButton = styled.button`
   font-size: 0.8em;
@@ -40,7 +40,7 @@ const StyledButton = styled.button`
       case `xs`:
         return `2em`;
       default:
-        return `3.5em`;
+        return `auto`;
     }
   }};
   height: ${(props) => {
@@ -96,7 +96,7 @@ const StyledAnchor = styled.a`
       case `xs`:
         return `2rem`;
       default:
-        return `3.5rem`;
+        return `100%`;
     }
   }};
   height: ${(props) => {

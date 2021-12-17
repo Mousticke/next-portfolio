@@ -1,7 +1,7 @@
-import socialLinksData from "../../../../config/socialMediaLinksData";
-import Button from "../../../Utilities/Button";
+import socialLinksData from "@/config/socialMediaLinksData";
+import Button from "@/components/Utilities/Button";
 import { AsideSocialContainer } from "./NavSocialMedia.styles";
-import { getSocialIcon } from "../../../Utilities/SocialMedia";
+import { getSocialIcon } from "@/components/Utilities/SocialMedia";
 
 function NavSocialMedia() {
   return (

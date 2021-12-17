@@ -1,5 +1,5 @@
 import { Container, MainContainer } from "./Layout.styles";
-import { Footer } from "../components";
+import { Footer } from "@/components";
 
 function Layout({ children }) {
   return (
