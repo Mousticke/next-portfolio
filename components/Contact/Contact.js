@@ -8,7 +8,7 @@ import {
   ContactSummary,
   ContactButton,
 } from "./Contact.styles";
-import akimThink from "../../public/bitmoji-think.png";
+import akimThink from "@/public/bitmoji-think.png";
 
 function Contact() {
   return (

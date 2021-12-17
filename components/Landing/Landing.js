@@ -11,7 +11,7 @@ import {
   HeroContainer,
   HeroCitation,
 } from "./Landing.styles";
-import akimHi from "../../public/bitmoji-hi.png";
+import akimHi from "@/public/bitmoji-hi.png";
 import Link from "next/link";
 
 function Landing() {

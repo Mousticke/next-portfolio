@@ -9,7 +9,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/config/*": ["config/*"],
       "@/utils": ["utils/index"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/public/*": ["public/*"]
     }
   }
 }
