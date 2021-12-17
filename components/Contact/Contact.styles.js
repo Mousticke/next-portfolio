@@ -62,6 +62,6 @@ export const ContactButton = styled.a`
   transition: ${transitionAll};
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.text_secondary};
+    background-color: ${(props) => props.theme.colors.hover_button};
   }
 `;
