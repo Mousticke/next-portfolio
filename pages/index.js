@@ -12,7 +12,6 @@ import {
 } from "@/components";
 
 //TODO - SEO
-//TODO - Contact form
 //TODO - Resume like experiences
 //TODO - About me
 //TODO - Projects
