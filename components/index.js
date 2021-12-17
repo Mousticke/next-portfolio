@@ -7,3 +7,4 @@ export { default as Experience } from "./Experience/Experience";
 export { default as Project } from "./Project/Project";
 export { default as SocialMedia } from "./SocialMedia/SocialMedia";
 export { default as CustomRight } from "./CustomRight/CustomRight";
+export { default as SEO } from "./SEO/SEO";

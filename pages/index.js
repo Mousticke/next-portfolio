@@ -9,6 +9,7 @@ import {
   Contact,
   Experience,
   Project,
+  SEO,
 } from "@/components";
 
 //TODO - SEO
@@ -28,9 +29,8 @@ export default function Home() {
         <Head>
           <title>Akim Benchiha</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="description" content="Akim's Portfolio" />
-          <link rel="icon" href="/favicon.ico" />
         </Head>
+        <SEO />
         <Landing />
         <About />
         <Experience />
