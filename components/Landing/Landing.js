@@ -9,6 +9,7 @@ import {
   HeroSummary,
   HeroActions,
   HeroContainer,
+  HeroCitation,
 } from "./Landing.styles";
 import akimHi from "../../public/bitmoji-hi.png";
 import Link from "next/link";
@@ -37,11 +38,6 @@ function Landing() {
             I&apos;m currently working as a Consulting Engineer at Alcyone
           </HeroSummary>
           <HeroActions>
-            <Link href="mailto:akim.benchiha@gmail.com" passHref={true}>
-              <a rel="noopener noreferrer" aria-label="Say Hi">
-                Say Hi
-              </a>
-            </Link>
             <Link href="/CV_Akim_BENCHIHA_EN.pdf">
               <a
                 target="_blank"
@@ -59,6 +55,15 @@ function Landing() {
           </HeroActions>
         </HeroContainer>
       </IntroductionContainer>
+      <HeroCitation>
+        <blockquote>
+          <p>
+            If debugging is the process of removing software bugs, then
+            programming must be the process of putting them in.
+          </p>
+          <footer>Edsger W. Dijkstra</footer>
+        </blockquote>
+      </HeroCitation>
     </LandingSection>
   );
 }

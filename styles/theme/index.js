@@ -2,7 +2,7 @@ const theme = {
   //fonts
   fonts: {
     title: "'Poppins', sans-serif",
-    main: "'Poppins', sans-serif",
+    main: "'Open Sans', sans-serif",
     mono: "'Space Mono', sans-serif",
   },
   colors: {
@@ -17,15 +17,15 @@ const theme = {
     text_slate: "hsl(0deg 0% 69%)",
     text_slate_blue: "hsl(199deg 66% 70% / 90%)",
     bar: "hsl(0deg 0% 37%)",
-    text_secondary: "hsl(176deg 96% 69%)",
-    hover_link: "hsl(176deg 96% 69%)",
-    hover_button: "hsl(176deg 45% 34% / 44%)",
-    numbering: "hsl(176deg 96% 69%)",
+    text_secondary: "hsl(178deg 100% 44%)",
+    hover_link: "hsl(178deg 100% 44%)",
+    hover_button: "hsl(178deg 100% 48% / 11%)",
+    numbering: "hsl(178deg 100% 44%)",
     navbar_aside: "linear-gradient(80deg,#00000063 0%,#020206b3 100%)", //"linear-gradient(80deg,#1b27357a 0%,#090a0f75 100%)",
     navbar_box_shadow: "rgb(135 165 209 / 68%)",
     navbar_inner_scrolled:
       "linear-gradient(80deg,hsl(215deg 82% 9%) 0%,hsl(215deg 62% 6%) 100%)",
-    navbar_bar_burger: "hsl(176deg 96% 69%)",
+    navbar_bar_burger: "hsl(178deg 100% 44%)",
     facebookButton: "#3f85f4",
     linkedInButton: "#0177b5",
     stackOverflowButton: "#ff4e00",

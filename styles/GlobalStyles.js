@@ -44,8 +44,8 @@ const GlobalStyles = createGlobalStyle`
         @media ${breakpoints.media_screens.portrait_phone} {
             font-size: 
             calc(
-                16px + 
-                (24 - 16) * 
+                14px + 
+                (20 - 14) * 
                 (
                     (100vw - ${breakpoints.px_sizes.portrait_phone}px)
                     / 
@@ -56,15 +56,11 @@ const GlobalStyles = createGlobalStyle`
                 )
             );
         }
-
-        @media ${breakpoints.media_screens.desktop} {
-            font-size: 24px;
-        }
     }
 
     body {
       font-family: ${(props) => props.theme.fonts.main};
-      line-height: var(--baseline);
+      line-height: 1.3;
 	    padding: 0;
 	    margin: 0 auto;  
       cursor: default;
@@ -115,32 +111,32 @@ const GlobalStyles = createGlobalStyle`
         font-family: ${(props) => props.theme.fonts.title};
         color: ${(props) => props.theme.colors.lightest_slate};
         font-weight: 600;
-	    margin-bottom: var(--baseline);
+	      margin-bottom: var(--baseline);
     }
 
     h1 {
         font-size: var(--h1);
-        line-height: var(--h1);
+        line-height: 1.1;
     }
 
     h2 {
         font-size: var(--h2);
-        line-height: var(--h2);
+        line-height: 1.1;
     }
 
     h3 {
         font-size: var(--h3);
-        line-height: var(--h3);
+        line-height: 1.1;
     }
 
     h4 {
         font-size: var(--h4);
-        line-height: var(--h4);
+        line-height: 1.1;
     }
 
     h5 {
         font-size: var(--h5);
-        line-height: var(--h5);
+        line-height: 1.1;
     }
 
     button{

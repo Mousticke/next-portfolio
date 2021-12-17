@@ -14,7 +14,8 @@ export const NavContainer = styled.nav`
 export const NavLinks = styled.div`
   display: none;
   align-items: center;
-  font-size: 0.6rem;
+  font-size: 14px;
+  font-family: ${(props) => props.theme.fonts.mono};
 
   @media ${breakpoints.media_screens.landscape_tablet} {
     display: flex;

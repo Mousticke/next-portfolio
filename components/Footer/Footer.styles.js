@@ -32,7 +32,7 @@ export const FooterLink = styled.a`
 export const FooterSocialContainer = styled.div`
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   justify-content: space-between;
   margin: 0px auto 10px;
   svg {

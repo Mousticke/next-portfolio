@@ -4,8 +4,8 @@ import { NavLogoContainer } from "./NavLogo.styles";
 function NavLogo() {
   return (
     <NavLogoContainer>
-      <Link href="/" passHref={true}>
-        <a aria-label="home" rel="noreferrer">
+      <Link href="/">
+        <a aria-label="home" rel="noreferrer noopener">
           <span className="text-secondary">{"<"}</span>
           <span className="text-hero"></span>
           <span className="text-secondary">{" />"}</span>
