@@ -1,6 +1,15 @@
 import Head from "next/head";
 import Layout from "../Layout/Layout";
-import { Header, CustomRight, SocialMedia, Landing } from "@/components";
+import {
+  Header,
+  CustomRight,
+  SocialMedia,
+  Landing,
+  About,
+  Contact,
+  Experience,
+  Project,
+} from "@/components";
 
 //TODO - SEO
 //TODO - Contact form
@@ -24,6 +33,10 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Landing />
+        <About />
+        <Experience />
+        <Project />
+        <Contact />
       </Layout>
       <SocialMedia />
       <CustomRight />

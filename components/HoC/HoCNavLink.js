@@ -4,7 +4,7 @@ const HoCNavLink = (
   WrappedComponent,
   ListItemComponent,
   LinkComponent,
-  navLinks
+  navLinks,
 ) => {
   return (
     <WrappedComponent>
@@ -12,7 +12,7 @@ const HoCNavLink = (
         navLinks.map(({ id, url, name }) => (
           <ListItemComponent key={id}>
             <LinkComponent href={url}>
-              <a>{name}</a>
+              <a aria-label={name}>{name}</a>
             </LinkComponent>
           </ListItemComponent>
         ))}
