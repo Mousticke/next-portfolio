@@ -64,7 +64,7 @@ export const SocialMediaList = styled.div`
     width: 1px;
     height: 90px;
     margin: 0px auto;
-    margin-top: 10px;
+    margin-block-start: 10px;
     background-color: ${(props) => props.theme.colors.bar};
   }
 `;

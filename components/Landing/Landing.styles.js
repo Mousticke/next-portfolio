@@ -19,7 +19,7 @@ export const BitmojiContainer = styled.div`
   min-width: 131px;
   @media ${breakpoints.media_screens.portrait_tablet} {
     display: block;
-    margin-right: 20px;
+    margin-inline-end: 20px;
     align-self: center;
   }
 `;
@@ -50,7 +50,7 @@ export const HeroName = styled.h1`
 
 export const HeroDoing = styled.h2`
   line-height: 0.9;
-  margin-top: 10px;
+  margin-block-start: 10px;
   font-size: clamp(30px, 20px + 2vw, 60px);
   font-weight: 600;
   color: ${(props) => props.theme.colors.text_slate_blue};
@@ -71,7 +71,7 @@ export const HeroSummary = styled.p`
 `;
 
 export const HeroActions = styled.div`
-  margin-top: 30px;
+  margin-block-start: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -85,8 +85,8 @@ export const HeroActions = styled.div`
     text-decoration: none;
     cursor: pointer;
     transition: ${transitionAll};
-    margin-right: 1rem;
-    margin-top: 10px;
+    margin-inline-end: 1rem;
+    margin-block-start: 10px;
 
     font-size: 1rem;
     @media ${breakpoints.media_screens.portrait_tablet} {
@@ -108,13 +108,13 @@ export const HeroCitation = styled.div`
   blockquote {
     text-align: center;
     transition: ${transitionAll};
-    margin-top: 30px;
+    margin-block-start: 30px;
     font-weight: 300;
   }
   p {
     justify-content: center;
     font-size: 0.8rem;
-    margin-top: 0;
+    margin-block-start: 0;
     font-style: italic;
     &:before {
       content: open-quote;

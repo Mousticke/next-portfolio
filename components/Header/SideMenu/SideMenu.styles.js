@@ -35,7 +35,7 @@ export const Aside = styled.aside`
   height: 100%;
   position: relative;
   right: 0;
-  margin-left: auto;
+  margin-inline-start: auto;
   overflow-y: scroll;
   overflow-x: hidden;
   box-shadow: 16px 0px 30px -17px ${(props) => props.theme.colors.navbar_box_shadow};
@@ -77,7 +77,7 @@ export const AsideNavListItem = styled.li`
     color: ${(props) => props.theme.colors.numbering};
     font-family: ${(props) => props.theme.fonts.mono};
     font-size: 0.9em;
-    margin-bottom: 5px;
+    margin-block-end: 5px;
   }
 
   a {

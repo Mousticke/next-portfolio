@@ -10,7 +10,7 @@ export const BitmojiContainer = styled.div`
   min-width: 120px;
   @media ${breakpoints.media_screens.portrait_tablet} {
     display: block;
-    margin-bottom: 20px;
+    margin-block-end: 20px;
     align-self: center;
   }
 `;
@@ -55,7 +55,7 @@ export const ContactSection = styled.section`
 
 export const ContactButton = styled.a`
   align-self: center;
-  margin-top: 1em;
+  margin-block-start: 1em;
   padding: 1em;
   line-height: 1;
   border-radius: 3px;
