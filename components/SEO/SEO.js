@@ -11,7 +11,7 @@ const SEO = () => {
       <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="msapplication-TileColor" content="#080f29" />
+      <meta name="msapplication-TileColor" content="#060E19" />
       <meta
         name="msapplication-TileImage"
         content="/assets/icons/mstile-150x150.png"
@@ -24,7 +24,7 @@ const SEO = () => {
       <meta itemProp="image" content="/portfolioShot.png" />
       <meta name="keywords" content={`${get(metaTag, "keywords", "")}`} />
       <meta itemProp="name" content={get(metaTag, "title", "")} />
-      <meta name="theme-color" content="#000000" />
+      <meta name="theme-color" content="#060E19" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={get(metaTag, "url", "")} />
       <meta
