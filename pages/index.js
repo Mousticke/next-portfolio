@@ -17,8 +17,6 @@ import {
 //TODO - e2e Cypress
 //TODO - Review / last Refactor
 //TODO - Git push master + workflow
-//TODO - margin-block-start: 0em; margin-block-end: 0em; margin-inline-start: 0px; margin-inline-end: 0px;
-//TODO - site url in process env
 //TODO - next sitemap
 
 export default function Home() {
