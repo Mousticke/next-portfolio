@@ -5,12 +5,13 @@ import Head from "next/head";
 const SEO = () => {
   return (
     <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title itemProp="name" lang="en">
         {_.get(metaTag, "title", "")}
       </title>
       <link rel="shortcut icon" href="/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#x" />
+      <meta charSet="utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="msapplication-TileColor" content="#080f29" />
       <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
       <meta
         name="apple-mobile-web-app-title"
@@ -62,6 +63,53 @@ const SEO = () => {
         sizes="180x180"
         href="/apple-touch-icon.png"
       />
+      <link
+        rel="apple-touch-icon"
+        sizes="48x48"
+        href="/assets/icons/icon-48x48.png"
+      />
+
+      <link
+        rel="apple-touch-icon"
+        sizes="72x72"
+        href="/assets/icons/icon-48x48.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="96x96"
+        href="/assets/icons/icon-96x96.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="128x128"
+        href="/assets/icons/icon-128x128.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="144x144"
+        href="/assets/icons/icon-144x144.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="152x152"
+        href="/assets/icons/icon-152x152.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="192x192"
+        href="/assets/icons/icon-192x192.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="384x384"
+        href="/assets/icons/icon-384x384.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="512x512"
+        href="/assets/icons/icon-512x512.png"
+      />
+
       <link
         rel="icon"
         type="image/png"
