@@ -30,7 +30,11 @@ function Header() {
         sideMenuOpen={showSide}
         navLinksData={memoizeNavLinksData}
       />
-      <SideMenu sideMenuOpen={showSide} navLinksData={memoizeNavLinksData} />
+      <SideMenu
+        sideMenuOpen={showSide}
+        setShowSide={setShowSide}
+        navLinksData={memoizeNavLinksData}
+      />
     </HeaderContainer>
   );
 }

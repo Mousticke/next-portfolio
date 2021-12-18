@@ -10,16 +10,26 @@ import {
   AsideNavListItem,
 } from "./SideMenu.styles";
 
-function HoCNavLinkSmallDevice({ navLinksData }) {
-  return HoCNavLink(AsideNavList, AsideNavListItem, Link, navLinksData);
+function HoCNavLinkSmallDevice({ navLinksData, setShowSide }) {
+  return HoCNavLink(
+    AsideNavList,
+    AsideNavListItem,
+    Link,
+    navLinksData,
+    "AsideNav",
+    setShowSide,
+  );
 }
 
-function SideMenu({ sideMenuOpen, navLinksData }) {
+function SideMenu({ sideMenuOpen, setShowSide, navLinksData }) {
   return (
     <NavSideMenu sideMenuOpen={sideMenuOpen} aria-hidden={!sideMenuOpen}>
       <Aside>
         <AsideNavContainer sideMenuOpen={sideMenuOpen}>
-          <HoCNavLinkSmallDevice navLinksData={navLinksData} />
+          <HoCNavLinkSmallDevice
+            setShowSide={setShowSide}
+            navLinksData={navLinksData}
+          />
         </AsideNavContainer>
         <SocialMedia />
       </Aside>

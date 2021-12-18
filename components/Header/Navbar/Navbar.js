@@ -6,7 +6,7 @@ import HoCNavLink from "@/components/HoC/HoCNavLink";
 import React from "react";
 
 function HoCNavLinkDesktop({ navLinksData }) {
-  return HoCNavLink(NavList, NavListItem, Link, navLinksData);
+  return HoCNavLink(NavList, NavListItem, Link, navLinksData, "DefaultNav");
 }
 
 function Navbar({ toggleSideMenu, sideMenuOpen, navLinksData }) {

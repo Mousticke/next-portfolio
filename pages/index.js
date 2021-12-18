@@ -17,7 +17,6 @@ import {
 //TODO - e2e Cypress
 //TODO - Review / last Refactor
 //TODO - Git push master + workflow
-//TODO - next sitemap
 
 export default function Home() {
   return (
