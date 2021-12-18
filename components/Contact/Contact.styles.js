@@ -28,7 +28,9 @@ export const ContactSummary = styled.p`
   }
 `;
 
-export const ContactInterest = styled.h5`
+export const ContactInterest = styled.p`
+  line-height: 1.1;
+  margin-block-end: 1.67em;
   color: ${(props) => props.theme.colors.text_secondary};
   font-family: ${(props) => props.theme.fonts.mono};
   font-weight: 400;

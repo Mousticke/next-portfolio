@@ -15,8 +15,7 @@ export const SocialMediaContainer = styled.div`
   }
 `;
 
-export const SocialMediaList = styled.ol`
-  list-style: none;
+export const SocialMediaList = styled.div`
   display flex;
   flex-direction: column;
   align-items: center;
