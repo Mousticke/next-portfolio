@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Layout from "../Layout/Layout";
 import {
   Header,
@@ -27,13 +26,6 @@ export default function Home() {
     <>
       <Header />
       <Layout>
-        <Head>
-          <title>Akim Benchiha</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </Head>
         <SEO />
         <Landing />
         <About />

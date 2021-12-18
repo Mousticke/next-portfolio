@@ -15,14 +15,16 @@ export const BitmojiContainer = styled.div`
   }
 `;
 
-export const ContactHead = styled.h2`
+export const ContactHead = styled.h1`
   font-size: clamp(30px, 20px + 2vw, 60px);
   font-weight: 700;
+  margin-block-start: 0;
 `;
 
 export const ContactSummary = styled.p`
   line-height: 1.4;
   font-size: 1rem;
+  font-weight: 300;
   @media ${breakpoints.media_screens.landscape_tablet} {
     font-size: 0.8rem;
   }
