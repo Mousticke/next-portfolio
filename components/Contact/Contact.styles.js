@@ -7,7 +7,7 @@ export const BitmojiContainer = styled.div`
   position: relative;
   display: none;
   max-width: 150px;
-  min-width: 110px;
+  min-width: 120px;
   @media ${breakpoints.media_screens.portrait_tablet} {
     display: block;
     margin-bottom: 20px;
