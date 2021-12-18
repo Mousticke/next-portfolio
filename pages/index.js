@@ -31,7 +31,7 @@ export default function Home() {
           <title>Akim Benchiha</title>
           <meta
             name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+            content="width=device-width, initial-scale=1.0"
           />
         </Head>
         <SEO />
