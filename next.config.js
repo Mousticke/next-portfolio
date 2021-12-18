@@ -7,6 +7,7 @@ module.exports = withPWA({
     runtimeCaching,
     register: true,
     skipWaiting: true,
+    disable: process.env.NODE_ENV === "development",
   },
   reactStrictMode: true,
 });

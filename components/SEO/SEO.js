@@ -22,7 +22,10 @@ const SEO = () => {
         content={get(metaTag, "title", "")}
       />
       <meta name="description" content={get(metaTag, "description", "")} />
-      <meta itemProp="image" content="/portfolioShot.png" />
+      <meta
+        itemProp="image"
+        content={`${process.env.NEXT_PUBLIC_SITE_URL}/portfolioShot.png`}
+      />
       <meta name="keywords" content={`${get(metaTag, "keywords", "")}`} />
       <meta itemProp="name" content={get(metaTag, "title", "")} />
       <meta name="theme-color" content="#060E19" />
@@ -41,7 +44,10 @@ const SEO = () => {
         name="twitter:description"
         content={get(metaTag, "description", "")}
       />
-      <meta name="twitter:image" content="/portfolioShot.png" />
+      <meta
+        name="twitter:image"
+        content={`${process.env.NEXT_PUBLIC_SITE_URL}/portfolioShot.png`}
+      />
       <meta name="twitter:image:alt" content={get(metaTag, "title", "")} />
 
       <meta

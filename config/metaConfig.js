@@ -5,7 +5,7 @@ const metaTag = {
     "Young software engineer based in Luxembourg, specializing in Front-End/Software development, Industrial Engineering and Project Management",
   keywords:
     "Akim Benchiha, Akim, Benchiha, Mousticke, software engineer, front-end engineer, web developer, javascript, luxembourg, singapore",
-  url: "https://akimbch.netlify.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   name: "Akim Benchiha",
   location: "Luxembourg",
   email: "akim.benchiha@gmail.com",
