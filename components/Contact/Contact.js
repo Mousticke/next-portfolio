@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,9 +11,9 @@ import {
 } from "./Contact.styles";
 import akimThink from "@/public/bitmoji-think.png";
 
-function Contact() {
+function Contact(props, ref) {
   return (
-    <ContactSection id="contact">
+    <ContactSection id={props.id} ref={ref}>
       <BitmojiContainer>
         <Image
           src={akimThink}
@@ -45,4 +46,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default React.forwardRef(Contact);

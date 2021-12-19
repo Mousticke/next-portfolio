@@ -1,5 +1,11 @@
-function About() {
-  return <section id="about" style={{ height: "100vh" }}></section>;
+import React from "react";
+
+function About(props, ref) {
+  return (
+    <section id={props.id} ref={ref} style={{ height: "100vh" }}>
+      <p>About section</p>
+    </section>
+  );
 }
 
-export default About;
+export default React.forwardRef(About);

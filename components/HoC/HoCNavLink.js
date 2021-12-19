@@ -17,7 +17,7 @@ const HoCNavLink = (
       {navLinks &&
         navLinks.map(({ id, url, name }) => (
           <ListItemComponent key={id}>
-            <LinkComponent href={url}>
+            <LinkComponent href={url} passHref={true}>
               {navType === "AsideNav" ? (
                 <a onClick={handleAsideClosing} aria-label={name}>
                   {name}

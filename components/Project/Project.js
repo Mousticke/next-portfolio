@@ -1,5 +1,10 @@
-function Project() {
-  return <section id="projects" style={{ height: "100vh" }}></section>;
+import React from "react";
+function Project(props, ref) {
+  return (
+    <section id={props.id} ref={ref} style={{ height: "100vh" }}>
+      <p>Project section</p>
+    </section>
+  );
 }
 
-export default Project;
+export default React.forwardRef(Project);
