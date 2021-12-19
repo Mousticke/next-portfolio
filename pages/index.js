@@ -10,8 +10,9 @@ import {
   Project,
   SEO,
 } from "@/components";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import scrollConfig from "@/config/scrollConfig";
+import { throttle } from "@/utils";
 
 //TODO - Resume like experiences
 //TODO - About me
@@ -21,10 +22,58 @@ import scrollConfig from "@/config/scrollConfig";
 //TODO - Git push master + workflow
 
 export default function Home() {
+  const [activeLink, setActiveLink] = useState("home");
+  const refLandingContainer = useRef(null);
   const revealAboutContainer = useRef(null);
   const revealExperienceContainer = useRef(null);
   const revealProjectContainer = useRef(null);
   const revealContactContainer = useRef(null);
+
+  const handleActiveLink = useCallback(() => {
+    if (
+      window.scrollY >= revealAboutContainer.current.offsetTop &&
+      window.scrollY <=
+        revealAboutContainer.current.offsetTop +
+          revealAboutContainer.current.clientHeight
+    ) {
+      setActiveLink("about");
+    }
+    if (
+      window.scrollY >= revealExperienceContainer.current.offsetTop &&
+      window.scrollY <=
+        revealExperienceContainer.current.clientHeight +
+          revealExperienceContainer.current.offsetTop
+    ) {
+      setActiveLink("experience");
+    }
+    if (
+      window.scrollY >= revealProjectContainer.current.offsetTop &&
+      window.scrollY <=
+        revealProjectContainer.current.clientHeight +
+          revealProjectContainer.current.offsetTop
+    ) {
+      setActiveLink("projects");
+    }
+    if (
+      window.scrollY >= revealContactContainer.current.offsetTop &&
+      window.scrollY <=
+        revealContactContainer.current.clientHeight +
+          revealContactContainer.current.offsetTop
+    ) {
+      setActiveLink("contact");
+    }
+    if (window.scrollY < revealAboutContainer.current.offsetTop) {
+      setActiveLink("home");
+    }
+  }, []);
+
+  const throttledHandleActiveLink = throttle(handleActiveLink);
+  useEffect(() => {
+    window.addEventListener("scroll", throttledHandleActiveLink);
+    return () => {
+      window.removeEventListener("scroll", throttledHandleActiveLink);
+    };
+  }, [throttledHandleActiveLink]);
 
   useEffect(() => {
     async function animate() {
@@ -50,10 +99,10 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Header activeLink={activeLink} />
       <Layout>
         <SEO />
-        <Landing id="home" />
+        <Landing id="home" ref={refLandingContainer} />
         <About id="about" ref={revealAboutContainer} />
         <Experience id="experience" ref={revealExperienceContainer} />
         <Project id="projects" ref={revealProjectContainer} />

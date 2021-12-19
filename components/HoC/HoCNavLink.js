@@ -7,6 +7,7 @@ const HoCNavLink = (
   navLinks,
   navType,
   setShowSide,
+  activeLink,
 ) => {
   const handleAsideClosing = () => {
     setShowSide((prevState) => !prevState);
@@ -15,7 +16,7 @@ const HoCNavLink = (
   return (
     <WrappedComponent>
       {navLinks &&
-        navLinks.map(({ id, url, name }) => (
+        navLinks.map(({ id, url, name, element }) => (
           <ListItemComponent key={id}>
             <LinkComponent href={url} passHref={true}>
               {navType === "AsideNav" ? (
@@ -23,7 +24,12 @@ const HoCNavLink = (
                   {name}
                 </a>
               ) : (
-                <a aria-label={name}>{name}</a>
+                <a
+                  className={`${activeLink === element ? "active" : ""}`}
+                  aria-label={name}
+                >
+                  {name}
+                </a>
               )}
             </LinkComponent>
           </ListItemComponent>

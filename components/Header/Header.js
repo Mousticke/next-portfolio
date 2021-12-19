@@ -4,9 +4,9 @@ import navLinksData from "@/config/navLinksData";
 import SideMenu from "./SideMenu/SideMenu";
 import Navbar from "./Navbar/Navbar";
 import { useHeaderStyle } from "@/hooks";
-import { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
-function Header() {
+function Header({ activeLink }) {
   const { isTop, showSide, setShowSide } = useHeaderStyle({
     sideMenu: false,
     top: true,
@@ -29,6 +29,7 @@ function Header() {
         toggleSideMenu={memoizeToggleMenuCallback}
         sideMenuOpen={showSide}
         navLinksData={memoizeNavLinksData}
+        activeLink={activeLink}
       />
       <SideMenu
         sideMenuOpen={showSide}
@@ -39,4 +40,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);

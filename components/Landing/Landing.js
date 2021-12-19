@@ -13,10 +13,11 @@ import {
 } from "./Landing.styles";
 import akimHi from "@/public/bitmoji-hi.png";
 import Link from "next/link";
+import React from "react";
 
-function Landing() {
+function Landing(props, ref) {
   return (
-    <LandingSection>
+    <LandingSection props={props} ref={ref}>
       <IntroductionContainer>
         <BitmojiContainer className="bitmoji">
           <Image
@@ -68,4 +69,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default React.forwardRef(Landing);
