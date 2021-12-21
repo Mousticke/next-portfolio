@@ -13,7 +13,11 @@ export const MainContainer = styled.main`
   width: 100%;
   max-width: 1500px;
   min-height: 100vh;
-  padding: 0px 50px;
+  padding: 0px 30px;
+
+  @media ${breakpoints.media_screens.portrait_tablet} {
+    padding: 0px 50px;
+  }
 
   @media ${breakpoints.media_screens.landscape_tablet} {
     padding: 0px 100px;

@@ -13,10 +13,11 @@ const theme = {
     //background: "hsl(215deg 23% 16%)",
     landing:
       "radial-gradient(50% 50% at 50% 50%,hsl(215deg 65% 15%) 10%,hsl(215deg 62% 6%) 100%)",
-    text: "hsl(220deg 66% 91%)",
+    text: "hsl(213deg 70% 87%)",
     text_slate: "hsl(0deg 0% 69%)",
     text_slate_blue: "hsl(199deg 66% 70% / 90%)",
     bar: "hsl(0deg 0% 37%)",
+    title_after_bar: "hsl(219deg 46% 19%)",
     text_secondary: "hsl(178deg 100% 44%)",
     hover_link: "hsl(178deg 100% 44%)",
     hover_button: "hsl(178deg 100% 48% / 11%)",

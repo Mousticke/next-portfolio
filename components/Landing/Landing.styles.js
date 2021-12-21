@@ -61,13 +61,13 @@ export const HeroSummary = styled.p`
   max-width: 600px;
   line-height: 1.4;
   font-size: 1rem;
-  @media ${breakpoints.media_screens.portrait_tablet} {
+  /*@media ${breakpoints.media_screens.portrait_tablet} {
     font-size: 0.9rem;
   }
 
   @media ${breakpoints.media_screens.small_desktop} {
     font-size: 0.8rem;
-  }
+  }*/
 `;
 
 export const HeroActions = styled.div`
@@ -80,7 +80,7 @@ export const HeroActions = styled.div`
     background-color: transparent;
     border: 1px solid ${(props) => props.theme.colors.text_secondary};
     border-radius: 4px;
-    padding: 18px;
+    padding: 15px;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -89,9 +89,9 @@ export const HeroActions = styled.div`
     margin-block-start: 10px;
 
     font-size: 1rem;
-    @media ${breakpoints.media_screens.portrait_tablet} {
+    /*@media ${breakpoints.media_screens.portrait_tablet} {
       font-size: 0.7rem;
-    }
+    }*/
 
     &:hover {
       background-color: ${(props) => props.theme.colors.hover_button};
@@ -123,9 +123,9 @@ export const HeroCitation = styled.div`
       content: close-quote;
     }
 
-    @media ${breakpoints.media_screens.small_desktop} {
+    /*@media ${breakpoints.media_screens.small_desktop} {
       font-size: 0.7rem;
-    }
+    }*/
   }
   footer {
     font-size: 0.85rem;

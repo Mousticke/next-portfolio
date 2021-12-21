@@ -25,9 +25,9 @@ export const ContactSummary = styled.p`
   line-height: 1.4;
   font-size: 1rem;
   font-weight: 300;
-  @media ${breakpoints.media_screens.landscape_tablet} {
+  /*@media ${breakpoints.media_screens.landscape_tablet} {
     font-size: 0.8rem;
-  }
+  }*/
 `;
 
 export const ContactInterest = styled.p`
@@ -36,10 +36,10 @@ export const ContactInterest = styled.p`
   color: ${(props) => props.theme.colors.text_secondary};
   font-family: ${(props) => props.theme.fonts.mono};
   font-weight: 400;
-  font-size: 0.9rem;
+  /*font-size: 0.9rem;
   @media ${breakpoints.media_screens.landscape_tablet} {
     font-size: 0.8rem;
-  }
+  }*/
 `;
 
 export const ContactSection = styled.section`

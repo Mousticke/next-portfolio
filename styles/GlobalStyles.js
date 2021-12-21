@@ -45,9 +45,9 @@ const GlobalStyles = createGlobalStyle`
             font-size: 
             calc(
                 14px + 
-                (20 - 14) * 
+                (24 - 14) * 
                 (
-                    (100vw - ${breakpoints.px_sizes.portrait_phone}px)
+                    (100vw - 320)
                     / 
                     (
                         ${breakpoints.px_sizes.desktop} - 
@@ -161,6 +161,42 @@ const GlobalStyles = createGlobalStyle`
     img {
         border: 0; /* Removes border when inside 'a' element in IE6/7/8/9 */
         -ms-interpolation-mode: bicubic; /* Improves image quality when scaled in IE7 */
+    }
+
+    p{
+      font-weight: 300;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .title-count{
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-block-end: 30px;
+      width: 100%;
+      white-space: nowrap;
+      font-size: 1.5rem;
+      
+      &:before {
+        position: relative;
+        counter-increment: section 1;
+        content: "0" counter(section) ".";
+        margin-right: 10px;
+        color: ${(props) => props.theme.colors.numbering};
+        font-family: ${(props) => props.theme.fonts.mono};
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: relative;
+        height: 1px;
+        margin-left: 20px;
+        width: 100%;
+        background-color:${(props) => props.theme.colors.title_after_bar};
+      }
     }
 
   .facebookButton:hover:before{

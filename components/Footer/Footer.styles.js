@@ -26,6 +26,7 @@ export const FooterLink = styled.a`
   }
   p {
     line-height: 2;
+    font-size: inherit;
   }
 `;
 
