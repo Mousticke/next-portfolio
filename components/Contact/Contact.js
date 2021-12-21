@@ -9,19 +9,19 @@ import {
   ContactSummary,
   ContactButton,
 } from "./Contact.styles";
-import akimThink from "@/public/bitmoji-think.png";
+import akimQuestion from "@/public/bitmoji-question.png";
 
 function Contact(props, ref) {
   return (
     <ContactSection id={props.id} ref={ref}>
       <BitmojiContainer>
         <Image
-          src={akimThink}
+          src={akimQuestion}
           alt="Akim thinks for contact"
           loading="lazy"
           layout="responsive"
-          width={221}
-          height={329}
+          width={398}
+          height={398}
         />
       </BitmojiContainer>
 

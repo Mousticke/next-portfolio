@@ -9,6 +9,7 @@ import {
   Experience,
   Project,
   SEO,
+  Something,
 } from "@/components";
 import { useRef, useEffect, useCallback, useState } from "react";
 import scrollConfig from "@/config/scrollConfig";
@@ -113,6 +114,7 @@ export default function Home() {
       </Layout>
       <SocialMedia />
       <CustomRight />
+      <Something />
     </>
   );
 }
