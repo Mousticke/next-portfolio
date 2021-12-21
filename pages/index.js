@@ -31,10 +31,18 @@ export default function Home() {
 
   const handleActiveLink = useCallback(() => {
     if (
+      window.scrollY >= refLandingContainer.current.offsetTop &&
+      window.scrollY <=
+        refLandingContainer.current.clientHeight +
+          refLandingContainer.current.offsetTop
+    ) {
+      setActiveLink("home");
+    }
+    if (
       window.scrollY >= revealAboutContainer.current.offsetTop &&
       window.scrollY <=
-        revealAboutContainer.current.offsetTop +
-          revealAboutContainer.current.clientHeight
+        revealAboutContainer.current.clientHeight +
+          revealAboutContainer.current.offsetTop
     ) {
       setActiveLink("about");
     }
@@ -55,15 +63,10 @@ export default function Home() {
       setActiveLink("projects");
     }
     if (
-      window.scrollY >= revealContactContainer.current.offsetTop &&
-      window.scrollY <=
-        revealContactContainer.current.clientHeight +
-          revealContactContainer.current.offsetTop
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight
     ) {
       setActiveLink("contact");
-    }
-    if (window.scrollY < revealAboutContainer.current.offsetTop) {
-      setActiveLink("home");
     }
   }, []);
 

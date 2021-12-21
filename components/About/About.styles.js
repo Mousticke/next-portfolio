@@ -3,7 +3,11 @@ import { transitionAll } from "@/styles/transitions";
 import styled from "styled-components";
 
 export const AboutContainer = styled.section`
-  max-width: 900px;
+  max-width: 1000px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   word-break: keep-all;
 `;
 
