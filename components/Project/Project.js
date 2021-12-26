@@ -1,9 +1,12 @@
 import React from "react";
+import { ProjectContainer } from "./Project.styles";
+import projects from "@/config/projectData";
+
 function Project(props, ref) {
   return (
-    <section id={props.id} ref={ref} style={{ height: "100vh" }}>
-      <p>Project section</p>
-    </section>
+    <ProjectContainer id={props.id} ref={ref}>
+      <h1 className="title-count">Projects</h1>
+    </ProjectContainer>
   );
 }
 

@@ -35,7 +35,7 @@ function Footer() {
         rel="noreferrer noopener"
       >
         <p>Designed and built by Akim Benchiha</p>
-        <p>NextJS ~ Styled Component</p>
+        <p>NextJS ~ Styled Components</p>
       </FooterLink>
     </FooterContainer>
   );

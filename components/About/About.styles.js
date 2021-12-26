@@ -29,7 +29,7 @@ export const AboutArticle = styled.article`
     display: block;
     margin: 50px auto 0px;
     width: 70%;
-
+    position: relative;
     @media ${breakpoints.media_screens.landscape_tablet} {
         width: 100%;
         margin: 0;
@@ -42,13 +42,13 @@ export const AboutArticle = styled.article`
         box-shadow: 0px 0px 16px 2px #00e0d8;
         transition: ${transitionAll};
         & > img {
-            opacity: 0.8;
+            opacity: 1;
         }
         &:hover {
             cursor pointer;
             box-shadow: 0px 0px 23px 15px #00e0d8; 
             & > img {
-                opacity: 1;
+                opacity: 0.7;
             }
         }
     }

@@ -176,7 +176,7 @@ const GlobalStyles = createGlobalStyle`
       margin-block-end: 30px;
       width: 100%;
       white-space: nowrap;
-      font-size: 1.5rem;
+      font-size: 2rem;
       
       &:before {
         position: relative;
