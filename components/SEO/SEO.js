@@ -2,7 +2,7 @@ import { get } from "lodash";
 import metaTag from "@/config/metaConfig";
 import Head from "next/head";
 
-const SEO = () => {
+const SEO = ({ page = "" }) => {
   return (
     <Head>
       <title itemProp="name" lang="en">
@@ -30,7 +30,7 @@ const SEO = () => {
       <meta itemProp="name" content={get(metaTag, "title", "")} />
       <meta name="theme-color" content="#060E19" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={get(metaTag, "url", "")} />
+      <meta name="twitter:url" content={`${get(metaTag, "url", "")}${page}`} />
       <meta
         name="twitter:site"
         content={`${get(metaTag, "twitter_account", "")}`}
@@ -66,7 +66,7 @@ const SEO = () => {
       <meta property="og:site_name" content={get(metaTag, "title", "")} />
       <meta property="og:type" content={`${get(metaTag, "type", "")}`} />
       <meta property="og:title" content={get(metaTag, "title", "")} />
-      <meta property="og:url" content={get(metaTag, "url", "")} />
+      <meta property="og:url" content={`${get(metaTag, "url", "")}${page}`} />
 
       <link
         rel="apple-touch-icon"
