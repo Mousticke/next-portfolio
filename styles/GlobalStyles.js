@@ -42,19 +42,7 @@ const GlobalStyles = createGlobalStyle`
 
         //credit Mike Riethmuller: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
         @media ${breakpoints.media_screens.portrait_phone} {
-            font-size: 
-            calc(
-                14px + 
-                (24 - 14) * 
-                (
-                    (100vw - 320)
-                    / 
-                    (
-                        ${breakpoints.px_sizes.desktop} - 
-                        ${breakpoints.px_sizes.portrait_phone}
-                    )
-                )
-            );
+            font-size:calc(14px + (18 - 14) * ((100vw - 320px)/ (1600 - 320)));
         }
     }
 
