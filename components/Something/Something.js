@@ -1,4 +1,4 @@
-import akimHey from "@/public/bitmoji-cactus.png";
+import akimHey from "@/public/assets/bitmojis/bitmoji-cactus.png";
 import Image from "next/image";
 import { BitmojiContainer, SomethingContainer } from "./Something.styles";
 function Something() {

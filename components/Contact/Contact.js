@@ -9,7 +9,7 @@ import {
   ContactSummary,
   ContactButton,
 } from "./Contact.styles";
-import akimQuestion from "@/public/bitmoji-question.png";
+import akimQuestion from "@/public/assets/bitmojis/bitmoji-question.png";
 
 function Contact(props, ref) {
   return (
