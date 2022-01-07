@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "http://localhost:3000",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   changefreq: "monthly",
   priority: 0.7,
   sitemapSize: 5000,
@@ -15,6 +15,7 @@ module.exports = {
       alternateRefs: config.alternateRefs ?? [],
     };
   },
+  additionalPaths: async (config) => [],
   robotsTxtOptions: {
     policies: [
       {
