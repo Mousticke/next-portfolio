@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev",
     "build": "cross-env NODE_ENV=production next build",
+    "postbuild": "cross-env NODE_ENV=production next-sitemap --config next-sitemap.js",
     "start": "cross-env NODE_ENV=production next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
@@ -38,6 +39,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "lodash": "^4.17.21",
+    "next-sitemap": "^1.6.237",
     "prettier": "^2.5.1"
   }
 }
