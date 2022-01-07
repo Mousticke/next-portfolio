@@ -1,6 +1,6 @@
 import React from "react";
 import { ProjectContainer } from "./Project.styles";
-import projects from "@/config/projectData";
+//import projects from "@/config/projectData";
 
 function Project(props, ref) {
   return (

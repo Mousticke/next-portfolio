@@ -1,5 +1,5 @@
-import breakpoints from "@/styles/breakpoints";
-import { transitionAll } from "@/styles/transitions";
+/*import breakpoints from "@/styles/breakpoints";
+import { transitionAll } from "@/styles/transitions";*/
 import styled from "styled-components";
 
 export const ExperienceContainer = styled.section`
