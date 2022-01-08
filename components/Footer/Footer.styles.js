@@ -32,15 +32,10 @@ export const FooterLink = styled.a`
 
 export const FooterSocialContainer = styled.div`
   display: flex;
-  /*width: 100%;
-  max-width: 250px;
-  justify-content: space-between;
-  margin: 0px auto 10px;*/
-
   justify-content: space-around;
   flex-wrap: wrap;
   width: 75%;
-  margin: auto;
+  margin: 0 auto 10px;
   svg {
     height: fit-content;
     width: fit-content;
