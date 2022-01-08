@@ -31,7 +31,7 @@ const experiencesData = [
       {
         id: "0",
         name: "Contact Me",
-        title: "~",
+        title: "CEO",
       },
       {
         id: "1",
@@ -75,7 +75,7 @@ const experiencesData = [
       {
         id: "0",
         name: "Contact Me",
-        title: "~",
+        title: "Partner",
       },
       {
         id: "1",

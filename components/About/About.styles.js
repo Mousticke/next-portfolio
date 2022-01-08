@@ -116,6 +116,8 @@ export const AboutListItem = styled.li`
   font-size: 0.9em;
   margin-bottom: 0.3em;
   padding-left: 1.2em;
+
+  font-size: 0.9rem;
   &:before {
     content: "◈";
     font-size: 0.8em;
@@ -124,4 +126,8 @@ export const AboutListItem = styled.li`
   }
 `;
 
-export const AboutTechnologies = styled.div``;
+export const AboutTechnologies = styled.div`
+  & > p {
+    font-size: 0.9rem;
+  }
+`;
