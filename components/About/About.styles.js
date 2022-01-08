@@ -20,10 +20,14 @@ export const AboutArticle = styled.article`
     display: grid;
     grid-template-columns: 3fr minmax(250px, 2fr);
     gap: 50px;
-
+   
+    
   }
   .about-summary {
     display: block;
+    & > p{
+      font-size: 0.9rem;
+    }
   }
   .about-hero{
     display: block;
@@ -91,6 +95,9 @@ export const AboutHashtag = styled.a`
   border-radius: 6px;
   padding: 0 5px;
   display: inline;
+  transition: ${transitionAll};
+  font-family: ${(props) => props.theme.fonts.mono};
+  font-size: 0.8rem;
   &:hover {
     background-color: #273045;
   }

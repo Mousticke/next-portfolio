@@ -1,6 +1,7 @@
 const projects = [
   {
     title: "Spotify Player",
+    type: "Front-End Project",
     description:
       "Spotify clone player. Connect to Spotify first, play a music and interact with this clone application to choose one of your best music and see what the Spotify API can do",
     image: "/projects/spotify.png",
@@ -16,6 +17,7 @@ const projects = [
   },
   {
     title: "Multi Signature Wallet",
+    type: "Ethereum Project",
     description:
       "Smart contract deployed in Ropsten (Ethereum test net) along with a front end to sign and validate transaction inside a wallet owned by a predefined number of owner",
     image: "/projects/solidity.png",
@@ -36,6 +38,7 @@ const projects = [
   },
   {
     title: "Metaverse Chat",
+    type: "Dapp Project",
     description:
       "Develop a decentralized chat application powered with Moralis. Go to a next level of chat with the Metaverse",
     image: "/projects/metaverse.png",
@@ -53,6 +56,7 @@ const projects = [
   },
   {
     title: "Crypto Sender",
+    type: "Ethereum Project",
     description:
       "Web application interacting with a solidity smart contract (check the repo crypto-sender-smartcontract) to send Ether between two accounts.",
     image: "/projects/cryptoSender.png",
@@ -61,8 +65,8 @@ const projects = [
       { name: "NextJS", id: "3_1" },
       { name: "EthersJS", id: "3_2" },
       { name: "Web3", id: "3_3" },
-      { name: "Hardhat", id: "3_3" },
-      { name: "Smart contract", id: "3_4" },
+      { name: "Hardhat", id: "3_4" },
+      { name: "Smart contract", id: "3_5" },
     ],
     source: "https://github.com/Mousticke/crypto-sender-client",
     visit: "http://crypto-sender-client.vercel.app/",
@@ -70,6 +74,7 @@ const projects = [
   },
   {
     title: "Decentralized Feedback",
+    type: "Ethereum PoC",
     description:
       "Smart contract deployed in Ropsten (Ethereum test net) along with a front end to give feedback of anything with a rating score.",
     image: "/projects/solidity.png",
@@ -90,6 +95,7 @@ const projects = [
   },
   {
     title: "Idea App",
+    type: "Back-End Project",
     description:
       "Design a Restfull API for an application to post some ideas to develop and receive some advice to achieve the goal",
     image: "/projects/backendNodejs.png",
