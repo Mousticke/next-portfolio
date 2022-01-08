@@ -9,6 +9,7 @@ export const ProjectSection = styled.section`
   flex-direction: column;
   justify-content: center;
   word-break: keep-all;
+  padding: 50px 0;
 `;
 
 export const ProjectContainer = styled.div`
