@@ -7,7 +7,7 @@ import {
   NewFeedMessageContainer,
   NewFeedStatusInfo,
   NewFeedUserContainer,
-} from "./Feeds.styles";
+} from "./FeedFormComponent.styles";
 import StarRating from "./StarRating";
 import { FeedbackContext } from "context/FeedbackContext";
 import { useContext } from "react";
