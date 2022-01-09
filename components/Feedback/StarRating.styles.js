@@ -8,7 +8,7 @@ export const StarsContainer = styled.div`
 `;
 
 export const BitmojiRatingContainer = styled.div`
-  width: 150px;
+  width: 110px;
   text-align: center;
   overflow: hidden;
   top: 0;
@@ -17,17 +17,17 @@ export const BitmojiRatingContainer = styled.div`
 
 export const Bitmojis = styled.div`
   position: relative;
-  max-height: 150px;
+  max-height: 110px;
   transition: ${transitionAll};
   transform: ${(props) =>
     props.rating === 1
-      ? "translateY(-600px)"
+      ? "translateY(-440px)"
       : props.rating === 2
-      ? "translateY(-450px)"
+      ? "translateY(-330px)"
       : props.rating === 3
-      ? "translateY(-300px)"
+      ? "translateY(-220px)"
       : props.rating === 4
-      ? "translateY(-150px)"
+      ? "translateY(-110px)"
       : "translateY(0px)"};
 `;
 
