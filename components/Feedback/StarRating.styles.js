@@ -20,13 +20,13 @@ export const Bitmojis = styled.div`
   max-height: 150px;
   transition: ${transitionAll};
   transform: ${(props) =>
-    props.hoverRating === 1
+    props.rating === 1
       ? "translateY(-600px)"
-      : props.hoverRating === 2
+      : props.rating === 2
       ? "translateY(-450px)"
-      : props.hoverRating === 3
+      : props.rating === 3
       ? "translateY(-300px)"
-      : props.hoverRating === 4
+      : props.rating === 4
       ? "translateY(-150px)"
       : "translateY(0px)"};
 `;
