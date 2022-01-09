@@ -267,19 +267,6 @@ const GlobalStyles = createGlobalStyle`
     background-color:${(props) => props.theme.colors.stackOverflowButton};
   }
 
-  .star-rating > button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-.on {
-  color: #000;
-}
-.off {
-  color: #ccc;
-}
-
 `;
 
 export default GlobalStyles;
