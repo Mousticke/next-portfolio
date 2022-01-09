@@ -9,6 +9,14 @@ module.exports = withPWA({
     skipWaiting: true,
     disable: process.env.NODE_ENV === "development",
   },
+  env: {
+    ACCOUNT_INTERACTION_PUBLIC_KEY: process.env.ACCOUNT_INTERACTION_PUBLIC_KEY,
+    ACCOUNT_INTERACTION_PRIVATE_KEY:
+      process.env.ACCOUNT_INTERACTION_PRIVATE_KEY,
+    INFURA_PROVIDER_SECRET: process.env.INFURA_PROVIDER_SECRET,
+    INFURA_PROVIDER_ID: process.env.INFURA_PROVIDER_ID,
+    ETHEREUM_NETWORK: process.env.ETHEREUM_NETWORK,
+  },
   /*webpack: (config, { isServer }) => {
     if (isServer) {
       require("./scripts/sitemap-generator");
