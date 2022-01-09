@@ -118,9 +118,9 @@ export const FeedbackProvider = ({ children }) => {
       };
 
       const signedTx = await instance.signer.signTransaction(tx);
-      //console.log("Signed Transaction:", signedTx);
-      //const txHash = ethers.utils.keccak256(signedTx);
-      //console.log("Precomputed txHash:", txHash);
+      /*console.log("Signed Transaction:", signedTx);
+      const txHash = ethers.utils.keccak256(signedTx);
+      console.log("Precomputed txHash:", txHash);*/
       const sendSignTx = await instance.provider.sendTransaction(signedTx);
       //console.log(sendSignTx);
       setTxStatus(
