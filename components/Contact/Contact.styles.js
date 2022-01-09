@@ -28,6 +28,34 @@ export const ContactSummary = styled.p`
   /*@media ${breakpoints.media_screens.landscape_tablet} {
     font-size: 0.8rem;
   }*/
+  & > a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    font-weight: 500;
+    color: ${(props) => props.theme.colors.text_secondary};
+    transition: ${transitionAll};
+
+    &:hover {
+      font-style: italic;
+      &:after {
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 1px;
+      position: relative;
+      bottom: 0.15em;
+      background-color: ${(props) => props.theme.colors.text_secondary};
+      transition: ${transitionAll};
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const ContactInterest = styled.p`

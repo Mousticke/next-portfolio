@@ -32,7 +32,12 @@ function Contact(props, ref) {
       <ContactSummary className="contact-summary">
         I am not looking for any new opportunities. Nevertheless, you can always
         contact me via e-mail. Whether you contact me for an issue, question,
-        comment or just for a greeting, I will try my best to answer you.
+        comment or just for a greeting, I will try my best to answer you. You
+        can also give me a{" "}
+        <Link href="/feedback">
+          <a aria-label="Give feedback">feedback</a>
+        </Link>{" "}
+        on my portfolio and it will be in the blockchain for the eternity.
       </ContactSummary>
       <Link
         href="mailto:akim.benchiha@gmail.com?subject=Contact from your Portfolio"
