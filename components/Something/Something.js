@@ -4,7 +4,9 @@ import { BitmojiContainer, SomethingContainer } from "./Something.styles";
 function Something() {
   return (
     <SomethingContainer>
-      <div className="something-bubble">I have something for you here</div>
+      <div className="something-bubble">
+        Psst... Yes you ! Come over here. I have something for you.
+      </div>
       <BitmojiContainer>
         <Image
           src={akimHey}

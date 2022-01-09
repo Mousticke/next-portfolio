@@ -20,13 +20,15 @@ export const SomethingContainer = styled.div`
     display: none;
     position: absolute;
     right: -80px;
-    top: -50px;
+    top: -60px;
     width: 150px;
     background-color: #fff;
     color: black;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 -0.25vmin, 0 0.125vmin;
+    z-index: 10;
+    font-size: 0.7rem;
     transition: ${transitionAll};
     &:before {
       content: "";
@@ -34,11 +36,11 @@ export const SomethingContainer = styled.div`
       position: absolute;
       width: 40%;
       height: 100%;
-      bottom: -51%;
+      bottom: -53%;
       border-radius: 50%;
-      left: 10%;
-      box-shadow: 1px 1px, 8px 0px #fff, 7px 1px 0 0;
-      clip-path: polygon(0% 49%, 150% 48%, 150% 100%, 0% 100%);
+      left: 0%;
+      box-shadow: 0px 3px, 8px 0px #fff, 8px 0px 0 0;
+      clip-path: polygon(0% 41%, 141% 48%, 136% 105%, 65% 100%);
       transition: ${transitionAll};
     }
     &:after {
@@ -50,7 +52,7 @@ export const SomethingContainer = styled.div`
 
   &:hover {
     cursor: pointer;
-    left: -60px;
+    left: -65px;
     & > .something-bubble {
       display: block;
     }
