@@ -16,8 +16,6 @@ import scrollConfig from "@/config/scrollConfig";
 import { throttle } from "@/utils";
 
 //TODO - Resume like experiences
-//TODO - About me
-//TODO - Projects
 //TODO - e2e Cypress
 //TODO - Review / last Refactor
 //TODO - Git push master + workflow
