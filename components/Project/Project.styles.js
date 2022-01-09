@@ -88,6 +88,28 @@ export const ProjectTitle = styled.h3`
   }
 `;
 
+export const ProjectTitleMd = styled.h4`
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  & > a {
+    color: ${(props) => props.theme.colors.text};
+  }
+  transition: ${transitionAll};
+  &:hover {
+    & > a {
+      color: ${(props) => props.theme.colors.hover_link};
+      outline: none;
+    }
+  }
+
+  @media ${breakpoints.media_screens.landscape_tablet} {
+    justify-content: flex-end;
+  }
+`;
+
 export const ProjectType = styled.p`
   @media ${breakpoints.media_screens.landscape_tablet} {
     justify-content: flex-end;

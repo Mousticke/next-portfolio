@@ -11,6 +11,7 @@ import {
   ProjectTag,
   ProjectTags,
   ProjectTitle,
+  ProjectTitleMd,
   ProjectType,
 } from "./Project.styles";
 import projects from "@/config/projectData";
@@ -70,8 +71,7 @@ function Project(props, ref) {
                 </Link>
               </ProjectPreview>
               <ProjectDescriptionContainer>
-                <ProjectType className="mdDisplay">{type}</ProjectType>
-                <ProjectTitle className="mdDisplay">
+                <ProjectTitleMd className="mdDisplay">
                   <Link href={source} passHref>
                     <a
                       target="_blank"
@@ -81,7 +81,8 @@ function Project(props, ref) {
                       {title}
                     </a>
                   </Link>
-                </ProjectTitle>
+                </ProjectTitleMd>
+                <ProjectType className="mdDisplay">{type}</ProjectType>
                 <ProjectDescription>
                   <p>{description}</p>
                   {projectTagsComponent(tags, "mdDisplay")}
