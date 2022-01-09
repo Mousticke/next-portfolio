@@ -66,6 +66,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
           return (
             <StarButton
               type="button"
+              aria-label="Star Rating"
               key={index}
               className={index <= (hoverRating || rating) ? "on" : "off"}
               onClick={() =>
