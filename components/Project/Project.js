@@ -71,18 +71,18 @@ function Project(props, ref) {
                 </Link>
               </ProjectPreview>
               <ProjectDescriptionContainer>
-                <ProjectTitleMd className="mdDisplay">
-                  <Link href={source} passHref>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Source code"
-                    >
-                      {title}
-                    </a>
-                  </Link>
-                </ProjectTitleMd>
                 <ProjectType className="mdDisplay">{type}</ProjectType>
+                <Link href={source} passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Source code"
+                  >
+                    <ProjectTitleMd className="mdDisplay">
+                      {title}
+                    </ProjectTitleMd>
+                  </a>
+                </Link>
                 <ProjectDescription>
                   <p>{description}</p>
                   {projectTagsComponent(tags, "mdDisplay")}

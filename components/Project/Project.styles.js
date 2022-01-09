@@ -94,16 +94,6 @@ export const ProjectTitleMd = styled.h4`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  & > a {
-    color: ${(props) => props.theme.colors.text};
-  }
-  transition: ${transitionAll};
-  &:hover {
-    & > a {
-      color: ${(props) => props.theme.colors.hover_link};
-      outline: none;
-    }
-  }
 
   @media ${breakpoints.media_screens.landscape_tablet} {
     justify-content: flex-end;
@@ -151,6 +141,15 @@ export const ProjectDescriptionContainer = styled.div`
     position: absolute;
     flex-direction: column;
     grid-column: 4 / -1;
+
+    & > a {
+      color: ${(props) => props.theme.colors.text};
+    }
+    transition: ${transitionAll};
+    & > a:hover {
+      color: ${(props) => props.theme.colors.hover_link};
+      outline: none;
+    }
   }
 `;
 
