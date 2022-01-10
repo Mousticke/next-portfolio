@@ -10,7 +10,7 @@ import {
 } from "./FeedFormComponent.styles";
 import StarRating from "./StarRating";
 import { FeedbackContext } from "context/FeedbackContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import returnButton from "@/public/assets/utils/returnButton.svg";
 import Image from "next/image";
 
@@ -49,7 +49,6 @@ function FeedFormComponent() {
               onChange={(e) => handleChange(e, "user")}
             />
           </NewFeedUserContainer>
-
           <NewFeedMessageContainer>
             <FeedInput
               value={formData.message}
@@ -68,7 +67,6 @@ function FeedFormComponent() {
               />
             </FeedSendButton>
           </NewFeedMessageContainer>
-
           <NewFeedStatusInfo id="status">{txStatus}</NewFeedStatusInfo>
         </NewFeedContainer>
       </FeedForm>

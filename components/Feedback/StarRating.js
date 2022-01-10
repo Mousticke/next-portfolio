@@ -12,6 +12,7 @@ import bitmojiTear from "@/public/assets/bitmojis/bitmoji-tear.png";
 import bitmojiSweat from "@/public/assets/bitmojis/bitmoji-sweat.png";
 import bitmojiThink from "@/public/assets/bitmojis/bitmoji-question.png";
 import Image from "next/image";
+import React from "react";
 
 const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
   return (
@@ -88,4 +89,4 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
   );
 };
 
-export default StarRating;
+export default React.memo(StarRating);

@@ -6,7 +6,6 @@ export const FeedbackContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding: 50px 0;
-  background-color: rgb(15 26 50 / 28%);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
 `;
