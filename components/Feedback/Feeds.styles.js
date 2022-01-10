@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoints from "@/styles/breakpoints";
 
 export const FeedbackContainer = styled.section`
   max-height: 100vh;
@@ -32,6 +33,7 @@ export const AvatarFeed = styled.div`
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  margin-block-end: 10px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -50,18 +52,29 @@ export const FeedMessageContainer = styled.div`
   line-height: 16px;
   word-break: break-word;
   white-space: break-spaces;
-  background-color: rgba(19, 19, 19, 0.5);
   border-radius: 4px 4px 4px 0;
   margin-block-end: 5px;
-  padding: 5px 30px;
+  padding: 5px 10px;
+  background: rgb(19 37 65 / 48%);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 80%);
+  border: 1px solid rgb(6 7 12 / 74%);
+}
+
+
 `;
 
 export const MessageMetaData = styled.div`
+  display: flex;
+  flex-direction: column;
   font-weight: 600;
   font-size: 13px;
   line-height: 14px;
-  width: fit-content;
+  width: 100%;
   margin-block-end: 5px;
+  .message__user-date {
+    display: flex;
+    flex-direction: column;
+  }
   .user {
     margin-inline-end: 15px;
   }
@@ -77,9 +90,18 @@ export const MessageMetaData = styled.div`
     background-size: cover;
     background-image: url("/assets/stars/starOn.svg");
   }
-
   .date {
-    margin-inline-start: 15px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  @media ${breakpoints.media_screens.landscape_tablet} {
+    .message__user-date {
+      flex-direction: row;
+    }
+    .date {
+      justify-content: flex-end;
+    }
   }
 `;
 

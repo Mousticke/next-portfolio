@@ -33,9 +33,11 @@ function PostedFeedsComponent({ feeds }) {
           </AvatarFeed>
           <FeedMessageContainer>
             <MessageMetaData>
-              <span className="user">{user}</span>
-              <span>-</span>
-              <span className="date">{createdAt}</span>
+              <div className="message__user-date">
+                <span className="user">{user}</span>
+                <span className="date">{createdAt}</span>
+              </div>
+
               <div>
                 <span className="rate">Rated : {rate}</span>
                 <span className="star"></span>

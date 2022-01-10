@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoints from "@/styles/breakpoints";
 
 export const FeedFormContainer = styled.div`
   display: flex;
@@ -11,12 +12,16 @@ export const FeedFormContainer = styled.div`
 
 export const FeedForm = styled.form`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 80vw;
   padding: 1rem 1.5rem;
   border-color: rgb(96 165 250 / 1);
   box-shadow: 10px 10px 15px 10px rgb(0 0 0 / 10%),
     0 10px 10px 10px rgb(0 0 0 / 10%);
+
+  @media ${breakpoints.media_screens.landscape_tablet} {
+    flex-direction: row;
+  }
 `;
 
 export const NewFeedContainer = styled.div`
@@ -34,7 +39,7 @@ export const FeedInput = styled.input`
   background: transparent;
   color: white;
   text-align: right;
-
+  font-size: 0.9rem;
   cursor: text;
   & > ::placeholder {
     color: rgb(107 114 128 / 1);
