@@ -14,7 +14,7 @@ import {
 } from "./Feeds.styles";
 import avatarSvg from "@/public/assets/utils/avatar.svg";
 function Feeds() {
-  const { feeds, isLoadingFeeds, createFeed } = useContext(FeedbackContext);
+  const { feeds, isLoadingFeeds } = useContext(FeedbackContext);
 
   const endOfMessageRef = useRef(null);
 
