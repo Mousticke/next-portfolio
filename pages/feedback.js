@@ -1,14 +1,21 @@
-import { CustomRight, Feeds, SEO, SocialMedia } from "@/components";
+import {
+  BackToPortfolio,
+  CustomRight,
+  FeedbackUI,
+  SEO,
+  SocialMedia,
+} from "@/components";
 import { FeedbackProvider } from "context/FeedbackContext";
 import Layout from "Layout/Layout";
 
 function FeedBack() {
   return (
     <FeedbackProvider>
-      <Layout>
+      <Layout noFooter>
         <SEO page="/feedback" />
-        <Feeds />
+        <FeedbackUI />
       </Layout>
+      <BackToPortfolio />
       <SocialMedia />
       <CustomRight />
     </FeedbackProvider>

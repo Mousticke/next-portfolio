@@ -7,14 +7,14 @@ import {
   NewFeedMessageContainer,
   NewFeedStatusInfo,
   NewFeedUserContainer,
-} from "./FeedFormComponent.styles";
+} from "./PostFeedForm.styles";
 import StarRating from "./StarRating";
 import { FeedbackContext } from "context/FeedbackContext";
 import React, { useContext } from "react";
 import returnButton from "@/public/assets/utils/returnButton.svg";
 import Image from "next/image";
 
-function FeedFormComponent() {
+function PostFeedForm() {
   const {
     handleChange,
     txStatus,
@@ -74,4 +74,4 @@ function FeedFormComponent() {
   );
 }
 
-export default FeedFormComponent;
+export default PostFeedForm;

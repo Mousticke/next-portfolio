@@ -9,4 +9,5 @@ export { default as SocialMedia } from "./SocialMedia/SocialMedia";
 export { default as CustomRight } from "./CustomRight/CustomRight";
 export { default as Something } from "./Something/Something";
 export { default as SEO } from "./SEO/SEO";
-export { default as Feeds } from "./Feedback/Feeds";
+export { default as FeedbackUI } from "./Feedback/FeedbackUI";
+export { default as BackToPortfolio } from "./Utilities/BackToPortfolio";

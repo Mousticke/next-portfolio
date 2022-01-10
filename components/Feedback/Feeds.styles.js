@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import breakpoints from "@/styles/breakpoints";
 
-export const FeedbackContainer = styled.section`
-  max-height: 100vh;
-  min-width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 50px 0;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
-`;
-
 export const PostedFeeds = styled.article`
   display: flex;
   flex-direction: column;

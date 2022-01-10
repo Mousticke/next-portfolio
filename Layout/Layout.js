@@ -1,11 +1,11 @@
 import { Container, MainContainer } from "./Layout.styles";
 import { Footer } from "@/components";
 
-function Layout({ children }) {
+function Layout({ noFooter = false, children }) {
   return (
     <Container id="wrapper">
       <MainContainer>{children}</MainContainer>
-      <Footer />
+      {noFooter ? <></> : <Footer />}
     </Container>
   );
 }
