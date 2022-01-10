@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import breakpoints from "@/styles/breakpoints";
+import { transitionAll } from "@/styles/transitions";
 
 export const PostedFeeds = styled.article`
   display: flex;
@@ -13,23 +14,16 @@ export const PostedFeeds = styled.article`
   }
 `;
 
-export const PostedFeed = styled.div`
-  display: flex;
-  margin-block-start: 8px;
-  align-items: flex-end;
-`;
-
 export const AvatarFeed = styled.div`
   width: 24px;
   height: 24px;
-  margin-right: 8px;
+
   margin-block-end: 10px;
   display: grid;
   place-items: center;
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 50%;
-  box-shadow: 0 0 3px 3px #17eb7d;
   & > svg {
     opacity: 1;
     padding-top: 3px;
@@ -45,12 +39,26 @@ export const FeedMessageContainer = styled.div`
   border-radius: 4px 4px 4px 0;
   margin-block-end: 5px;
   padding: 5px 10px;
-  background: rgb(19 37 65 / 48%);
   box-shadow: 0 4px 8px rgb(0 0 0 / 80%);
   border: 1px solid rgb(6 7 12 / 74%);
-}
+`;
 
+export const PostedFeed = styled.div`
+  display: flex;
+  margin-block-start: 8px;
+  align-items: flex-end;
+  justify-content: ${(props) => (props.owner ? "flex-end" : "flex-start")};
+  ${AvatarFeed} {
+    margin-inline-end: ${(props) => (props.owner ? 0 : "8px")};
+    margin-inline-start: ${(props) => (props.owner ? "8px" : 0)};
+    box-shadow: ${(props) =>
+      props.owner ? "0 0 3px 3px rgb(116 0 0)" : "0 0 3px 3px rgb(0 255 161)"};
+  }
 
+  ${FeedMessageContainer} {
+    background: ${(props) =>
+      props.owner ? "rgb(116 0 0 / 35%)" : "rgb(19 37 65 / 48%)"};
+  }
 `;
 
 export const MessageMetaData = styled.div`
@@ -98,6 +106,23 @@ export const MessageMetaData = styled.div`
 export const FeedMessage = styled.p`
   font-weight: 400;
   font-size: 15px;
+`;
+
+export const ReplyButton = styled.button`
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  color: ${(props) => props.theme.colors.text};
+  font-size: 0.8rem;
+  margin-block-end: auto;
+  margin-block-start: 5px;
+  margin-inline-start: 1rem;
+  cursor: pointer;
+  transition: ${transitionAll};
+  &:hover {
+    color: ${(props) => props.theme.colors.text_secondary};
+  }
 `;
 
 export const UpToDate = styled.div`

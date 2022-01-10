@@ -16,6 +16,8 @@ module.exports = withPWA({
     INFURA_PROVIDER_SECRET: process.env.INFURA_PROVIDER_SECRET,
     INFURA_PROVIDER_ID: process.env.INFURA_PROVIDER_ID,
     ETHEREUM_NETWORK: process.env.ETHEREUM_NETWORK,
+    CONTRACT_OWNER: process.env.CONTRACT_OWNER,
+    CONTRACT_OWNER_PRIVATE_KEY: process.env.CONTRACT_OWNER_PRIVATE_KEY,
   },
   /*webpack: (config, { isServer }) => {
     if (isServer) {

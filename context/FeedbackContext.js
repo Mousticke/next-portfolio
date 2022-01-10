@@ -6,9 +6,12 @@ import Link from "next/link";
 export const FeedbackContext = React.createContext();
 const iface = new ethers.utils.Interface([
   "function createFeed(uint256 _rate, string calldata _message, string calldata _user)",
+  "function createResponse(uint _index, string calldata _message)",
 ]);
 
 export const FeedbackProvider = ({ children }) => {
+  const [isOwnerConnected, setIsOwnerConnected] = useState(false);
+  const [ownerStatus, setOwnerStatus] = useState("");
   const [txStatus, setTxStatus] = useState("");
   const [feeds, setFeeds] = useState([]);
   const [isLoadingFeeds, setIsLoadingFeeds] = useState(false);
@@ -18,6 +21,7 @@ export const FeedbackProvider = ({ children }) => {
     user: "",
   });
   const [hoverRating, setHoverRating] = useState(0);
+
   const getEthereumContract = () => {
     const provider = new ethers.providers.InfuraProvider(
       process.env.ETHEREUM_NETWORK,
@@ -36,11 +40,187 @@ export const FeedbackProvider = ({ children }) => {
     return feedback_instance;
   };
 
+  const getEthereumContractOwner = () => {
+    const provider = new ethers.providers.InfuraProvider(
+      process.env.ETHEREUM_NETWORK,
+      process.env.INFURA_PROVIDER_ID,
+      process.env.INFURA_PROVIDER_SECRET,
+    );
+    const signer = new ethers.Wallet(
+      process.env.CONTRACT_OWNER_PRIVATE_KEY,
+      provider,
+    );
+    const feedback_instance = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer,
+    );
+    return feedback_instance;
+  };
+
   const handleChange = (e, name) => {
     setFormData((prevState) => ({
       ...prevState,
       [name]: e.target.value,
     }));
+  };
+
+  const connectWallet = async () => {
+    try {
+      if (!window.ethereum) {
+        return {
+          isOwnerConnected: false,
+          ownerStatus: (
+            <span>
+              <p>
+                {" "}
+                🦊{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`https://metamask.io/download.html`}
+                >
+                  You must install Metamask, a virtual Ethereum wallet, in your
+                  browser.
+                </a>
+              </p>
+            </span>
+          ),
+        };
+      }
+
+      const addressArray = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      if (addressArray.length > 0) {
+        if (
+          addressArray[0].toString().toUpperCase() ===
+          process.env.CONTRACT_OWNER.toUpperCase()
+        ) {
+          return {
+            isOwnerConnected: true,
+            ownerStatus: "You can reply to the feedback",
+          };
+        } else {
+          return {
+            isOwnerConnected: false,
+            ownerStatus:
+              "You cannot reply to the feedback. You are not the owner",
+          };
+        }
+      } else {
+        return {
+          isOwnerConnected: false,
+          ownerStatus: "🦊 Connect to Metamask using the top right button.",
+        };
+      }
+    } catch (error) {
+      return {
+        isOwnerConnected: "",
+        ownerStatus: "😥 " + error.message,
+      };
+    }
+  };
+
+  const getCurrentWalletConnected = async () => {
+    try {
+      if (!window.ethereum) {
+        return {
+          isOwnerConnected: false,
+          ownerStatus: (
+            <span>
+              <p>
+                {" "}
+                🦊{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`https://metamask.io/download.html`}
+                >
+                  You must install Metamask, a virtual Ethereum wallet, in your
+                  browser.
+                </a>
+              </p>
+            </span>
+          ),
+        };
+      }
+
+      const addressArray = await window.ethereum.request({
+        method: "eth_accounts",
+      });
+
+      if (addressArray.length > 0) {
+        if (
+          addressArray[0].toString().toUpperCase() ===
+          process.env.CONTRACT_OWNER.toUpperCase()
+        ) {
+          return {
+            isOwnerConnected: true,
+            ownerStatus: "You can reply to the feedback",
+          };
+        } else {
+          return {
+            isOwnerConnected: false,
+            ownerStatus:
+              "You cannot reply to the feedback. You are not the owner",
+          };
+        }
+      } else {
+        return {
+          isOwnerConnected: false,
+          ownerStatus: "🦊 Connect to Metamask using the top right button.",
+        };
+      }
+    } catch (error) {
+      return {
+        isOwnerConnected: "",
+        ownerStatus: "😥 " + error.message,
+      };
+    }
+  };
+
+  const addWalletConnectionListener = () => {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          if (
+            accounts[0].toString().toUpperCase() ===
+            process.env.CONTRACT_OWNER.toUpperCase()
+          ) {
+            setIsOwnerConnected(true);
+            setOwnerStatus("👆🏽 You can reply to the feedback.");
+          } else {
+            setIsOwnerConnected(false);
+            setOwnerStatus(
+              "You cannot reply to the feedback. You are not the owner",
+            );
+          }
+        } else {
+          setIsOwnerConnected(false);
+          setOwnerStatus("🦊 Connect to Metamask using the top right button.");
+        }
+      });
+    } else {
+      setIsOwnerConnected(false);
+      setOwnerStatus(
+        <span>
+          <p>
+            {" "}
+            🦊{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://metamask.io/download.html`}
+            >
+              You must install Metamask, a virtual Ethereum wallet, in your
+              browser.
+            </a>
+          </p>
+        </span>,
+      );
+    }
   };
 
   const getAllFeedback = async () => {
@@ -53,6 +233,12 @@ export const FeedbackProvider = ({ children }) => {
         rate: Number(feed.rate),
         id: Number(feed.id),
         createdAt: new Date(feed.createdAt.toNumber() * 1000).toLocaleString(),
+        response: {
+          message: feed.response.message,
+          createdAt: new Date(
+            feed.response.createdAt.toNumber() * 1000,
+          ).toLocaleString(),
+        },
       }));
 
       return {
@@ -70,20 +256,17 @@ export const FeedbackProvider = ({ children }) => {
   const createFeed = async () => {
     const { rate, message, user } = formData;
     if (rate > 5 || rate < 0) {
-      return {
-        status: "❌ Your rate must be between 0 and 5.",
-      };
+      setTxStatus("❌ Your rate must be between 0 and 5.");
+      return;
     }
     if (message === "" || message.length < 10) {
-      return {
-        status: "❌ Your message must be filled with 10 characters minimum.",
-      };
+      setTxStatus("❌ Your message must be filled with 10 characters minimum.");
+      return;
     }
 
     if (user === "" || user.length < 5) {
-      return {
-        status: "❌ You must provide a username with 5 characters minimum.",
-      };
+      setTxStatus("❌ You must provide a username with 5 characters minimum.");
+      return;
     }
     try {
       const instance = getEthereumContract();
@@ -154,19 +337,105 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
+  const createReply = async (id, reply) => {
+    if (window.ethereum && isOwnerConnected) {
+      if (reply === "" || reply.length < 10) {
+        setOwnerStatus(
+          "❌ Your reply must be filled with 10 characters minimum.",
+        );
+        return;
+      }
+
+      try {
+        const instance = getEthereumContractOwner();
+        const gasPrice = await instance.provider.getGasPrice();
+        const gasLimit = await instance.estimateGas.createResponse(id, reply, {
+          from: process.env.CONTRACT_OWNER,
+        });
+
+        const nonce = await instance.provider.getTransactionCount(
+          process.env.CONTRACT_OWNER,
+          "latest",
+        );
+        const chainId = (await instance.provider.getNetwork()).chainId;
+
+        const tx = {
+          gasLimit: gasLimit._hex,
+          gasPrice: gasPrice._hex,
+          from: process.env.CONTRACT_OWNER,
+          to: contractAddress,
+          nonce: nonce,
+          chainId: chainId,
+          data: iface.encodeFunctionData("createResponse", [id, reply]),
+        };
+        const signedTx = await instance.signer.signTransaction(tx);
+        const sendSignTx = await instance.provider.sendTransaction(signedTx);
+        setOwnerStatus(
+          <span>
+            ✅{" "}
+            <Link
+              href={`https://ropsten.etherscan.io/tx/${sendSignTx.hash}`}
+              passHref
+            >
+              <a target="_blank" rel="noreferrer noopener">
+                View the status of your feedback on Etherscan!
+              </a>
+            </Link>
+            <br />
+            ℹ️ Once the transaction is verified by the network, the feedback
+            will be updated automatically.
+          </span>,
+        );
+      } catch (error) {
+        setOwnerStatus("😥 " + error.message);
+      }
+    } else {
+      setOwnerStatus(
+        "🦊 Connect to Metamask using the top right button or be the owner",
+      );
+    }
+  };
+
   const feedListener = async () => {
-    // event OnNewFeed(uint indexed createdAt, string message, string user, uint256 rate);
+    // event OnNewFeed(uint indexed createdAt, uint256 indexed _rate, string _user, string _message,);
     const instance = getEthereumContract();
     const feedCount = await instance.getFeedsCount();
-    instance.on("OnNewFeed", (createdAt, message, user, rate) => {
+    instance.on("OnNewFeed", (createdAt, _rate, _user, _message) => {
       const structuredFeed = {
-        user: user,
-        message: message,
-        rate: Number(rate),
+        user: _user,
+        message: _message,
+        rate: Number(_rate),
         id: Number(feedCount),
         createdAt: new Date(createdAt.toNumber() * 1000).toLocaleString(),
       };
       setFeeds((prevState) => [...prevState, structuredFeed]);
+      setTxStatus(
+        <span>
+          🎉 Your feedback has been added to the blockchain for the eternity.{" "}
+        </span>,
+      );
+    });
+  };
+
+  const replyListener = async () => {
+    // event OnNewFeed(uint indexed createdAt, uint256 indexed _rate, string _user, string _message,);
+    const instance = getEthereumContract();
+    instance.on("OnNewResponse", async (createdAt, index) => {
+      const feed = await instance.getFeed(index);
+      const extractExistingFeed = feeds.find((feedElement) => {
+        feedElement.id == index;
+      });
+      const unchangedFeeds = feeds.filter((feedElement) => {
+        feedElement.id != index;
+      });
+      const newFeeds = [...unchangedFeeds];
+      extractExistingFeed.response = {
+        createdAt: feed.response.createdAt,
+        message: feed.response.message,
+      };
+
+      newFeeds = [...newFeeds, extractExistingFeed];
+      setFeeds(newFeeds);
       setTxStatus(
         <span>
           🎉 Your feedback has been added to the blockchain for the eternity.{" "}
@@ -183,9 +452,22 @@ export const FeedbackProvider = ({ children }) => {
       if (status) setTxStatus(status);
       setIsLoadingFeeds(false);
     }
+
     feedListener();
+    replyListener();
+
     fetchFeeds();
-  }, []);
+
+    async function fetchWallet() {
+      const { isOwnerConnected, ownerStatus } =
+        await getCurrentWalletConnected();
+
+      setIsOwnerConnected(isOwnerConnected);
+      setOwnerStatus(ownerStatus);
+    }
+    fetchWallet();
+    addWalletConnectionListener();
+  }, [isOwnerConnected]);
 
   return (
     <FeedbackContext.Provider
@@ -199,6 +481,9 @@ export const FeedbackProvider = ({ children }) => {
         setFormData,
         hoverRating,
         setHoverRating,
+        isOwnerConnected,
+        ownerStatus,
+        createReply,
       }}
     >
       {children}
