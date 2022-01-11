@@ -245,7 +245,6 @@ export const FeedbackProvider = ({ children }) => {
         feeds: structuredFeeds,
       };
     } catch (error) {
-      console.log(error);
       return {
         feeds: [],
         status: "😥 " + error.message,
@@ -301,11 +300,8 @@ export const FeedbackProvider = ({ children }) => {
       };
 
       const signedTx = await instance.signer.signTransaction(tx);
-      /*console.log("Signed Transaction:", signedTx);
-      const txHash = ethers.utils.keccak256(signedTx);
-      console.log("Precomputed txHash:", txHash);*/
       const sendSignTx = await instance.provider.sendTransaction(signedTx);
-      //console.log(sendSignTx);
+
       setTxStatus(
         <span>
           ✅{" "}
