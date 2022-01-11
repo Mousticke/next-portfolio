@@ -164,6 +164,7 @@ function About(props, ref) {
         </div>
         <div className="about-hero">
           <Image
+            title="Akim Benchiha"
             src={akimHero}
             loading="lazy"
             layout="responsive"

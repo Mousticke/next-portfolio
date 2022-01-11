@@ -28,7 +28,7 @@ export const SomethingContainer = styled.div`
     padding: 10px;
     box-shadow: 0 -0.25vmin, 0 0.125vmin;
     z-index: 10;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     transition: ${transitionAll};
     &:before {
       content: "";
