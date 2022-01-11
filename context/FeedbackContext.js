@@ -407,6 +407,10 @@ export const FeedbackProvider = ({ children }) => {
         rate: Number(_rate),
         id: Number(feedCount),
         createdAt: new Date(createdAt.toNumber() * 1000).toLocaleString(),
+        response: {
+          createdAt: new Date(createdAt.toNumber() * 1000).toLocaleString(),
+          message: "",
+        },
       };
       setFeeds((prevState) => [...prevState, structuredFeed]);
       setTxStatus(
@@ -421,24 +425,30 @@ export const FeedbackProvider = ({ children }) => {
     // event OnNewFeed(uint indexed createdAt, uint256 indexed _rate, string _user, string _message,);
     const instance = getEthereumContract();
     instance.on("OnNewResponse", async (createdAt, index) => {
-      const feed = await instance.getFeed(index);
-      const extractExistingFeed = feeds.find((feedElement) => {
-        feedElement.id == index;
-      });
-      const unchangedFeeds = feeds.filter((feedElement) => {
-        feedElement.id != index;
-      });
-      const newFeeds = [...unchangedFeeds];
-      extractExistingFeed.response = {
-        createdAt: feed.response.createdAt,
-        message: feed.response.message,
+      const feed = await instance.getFeed(Number(index));
+      const structuredFeed = {
+        user: feed.user,
+        message: feed.message,
+        rate: Number(feed.rate),
+        id: Number(feed.id),
+        createdAt: new Date(feed.createdAt.toNumber() * 1000).toLocaleString(),
+        response: {
+          message: feed.response.message,
+          createdAt: new Date(
+            feed.response.createdAt.toNumber() * 1000,
+          ).toLocaleString(),
+        },
       };
 
-      newFeeds = [...newFeeds, extractExistingFeed];
-      setFeeds(newFeeds);
-      setTxStatus(
+      setFeeds((prevState) => {
+        let newData = prevState;
+        let findFeed = newData.find((f) => Number(f.id) === Number(index));
+        Object.assign(findFeed, structuredFeed);
+        return [...newData];
+      });
+      setOwnerStatus(
         <span>
-          🎉 Your feedback has been added to the blockchain for the eternity.{" "}
+          🎉 Your reply has been added to the blockchain for the eternity.{" "}
         </span>,
       );
     });
@@ -455,9 +465,10 @@ export const FeedbackProvider = ({ children }) => {
 
     feedListener();
     replyListener();
-
     fetchFeeds();
+  }, []);
 
+  useEffect(() => {
     async function fetchWallet() {
       const { isOwnerConnected, ownerStatus } =
         await getCurrentWalletConnected();

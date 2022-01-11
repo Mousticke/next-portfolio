@@ -62,28 +62,29 @@ function Feeds({ feeds, isOwnerConnected }) {
               <></>
             )}
           </PostedFeed>
+          {response?.message !== "" ? (
+            <PostedFeed owner>
+              <FeedMessageContainer>
+                <MessageMetaData>
+                  <div className="message__user-date">
+                    <span className="user">Owner</span>
+                    <span className="date">{response.createdAt}</span>
+                  </div>
+                </MessageMetaData>
 
-          <PostedFeed owner>
-            <FeedMessageContainer>
-              <MessageMetaData>
-                <div className="message__user-date">
-                  <span className="user">Owner</span>
-                  <span className="date">{response.createdAt}</span>
-                </div>
-              </MessageMetaData>
-
-              <FeedMessage>{response.message}</FeedMessage>
-            </FeedMessageContainer>
-            <AvatarFeed>
-              <Image
-                src={avatarSvg}
-                layout="fixed"
-                width={18}
-                height={20}
-                alt="Enter Button"
-              />
-            </AvatarFeed>
-          </PostedFeed>
+                <FeedMessage>{response.message}</FeedMessage>
+              </FeedMessageContainer>
+              <AvatarFeed>
+                <Image
+                  src={avatarSvg}
+                  layout="fixed"
+                  width={18}
+                  height={20}
+                  alt="Enter Button"
+                />
+              </AvatarFeed>
+            </PostedFeed>
+          ) : null}
         </div>
       ))}
       <UpToDate ref={endOfMessageRef}>
