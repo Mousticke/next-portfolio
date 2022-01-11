@@ -21,6 +21,7 @@ function Landing(props, ref) {
       <IntroductionContainer>
         <BitmojiContainer className="bitmoji">
           <Image
+            title="Akim says hi"
             src={akimHi}
             alt="Akim says hi"
             priority={true}

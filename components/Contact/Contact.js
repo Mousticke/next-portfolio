@@ -16,6 +16,7 @@ function Contact(props, ref) {
     <ContactSection id={props.id} ref={ref}>
       <BitmojiContainer>
         <Image
+          title="Akim thinks for contact"
           src={akimQuestion}
           alt="Akim thinks for contact"
           loading="lazy"

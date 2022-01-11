@@ -20,6 +20,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
       <BitmojiRatingContainer>
         <Bitmojis rating={rating}>
           <Image
+            title="Great"
             src={bitmojiAngel}
             layout="responsive"
             loading="lazy"
@@ -28,6 +29,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
             height={90}
           />
           <Image
+            title="Hum.. Good"
             src={bitmojiThink}
             layout="responsive"
             loading="lazy"
@@ -36,6 +38,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
             height={90}
           />
           <Image
+            title="So so"
             src={bitmojiMad}
             layout="responsive"
             loading="lazy"
@@ -44,6 +47,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
             height={90}
           />
           <Image
+            title="Stress"
             src={bitmojiSweat}
             layout="responsive"
             loading="lazy"
@@ -52,6 +56,7 @@ const StarRating = ({ rating, setFormData, hoverRating, setHoverRating }) => {
             height={90}
           />
           <Image
+            title="Tear"
             src={bitmojiTear}
             priority={true}
             layout="responsive"

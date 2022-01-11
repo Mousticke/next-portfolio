@@ -60,6 +60,7 @@ function Project(props, ref) {
                     aria-label="Source code"
                   >
                     <Image
+                      title={title}
                       src={image}
                       alt={`Feature project ${title}`}
                       layout="responsive"

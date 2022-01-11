@@ -8,10 +8,12 @@ function Something() {
       <a aria-label="Give feedback">
         <SomethingContainer>
           <div className="something-bubble">
-            Psst... Yes you ! Come over here. I have something for you.
+            Psst... Yes you ! Come over here. I have something for you related
+            to Ethereum.
           </div>
           <BitmojiContainer>
             <Image
+              title="Akim has something related with blockchain"
               src={akimHey}
               alt="Akim has something for your"
               loading="lazy"
