@@ -15,7 +15,7 @@ export const BitmojiContainer = styled.div`
   }
 `;
 
-export const ContactHead = styled.h1`
+export const ContactHead = styled.h2`
   font-size: clamp(30px, 20px + 2vw, 60px);
   font-weight: 700;
   margin-block-start: 0;

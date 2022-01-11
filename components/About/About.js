@@ -14,7 +14,7 @@ import akimHero from "@/public/akim2020.jpg";
 function About(props, ref) {
   return (
     <AboutContainer id={props.id} ref={ref}>
-      <h1 className="title-count">About Me</h1>
+      <h2 className="title-count">About Me</h2>
       <AboutArticle>
         <div className="about-summary">
           <p>

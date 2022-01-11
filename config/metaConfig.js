@@ -1,10 +1,10 @@
 const metaTag = {
   language: "en_US",
-  title: "Akim Benchiha | Software Engineer",
+  title: "Akim Benchiha | Blockchain ~ Software Engineer",
   description:
-    "Young software engineer based in Luxembourg, specializing in Front-End/Software development, Industrial Engineering and Project Management",
+    "Young software engineer based in Luxembourg, specializing in Blockchain, Front-End/Software development, and Project Management",
   keywords:
-    "Akim Benchiha, Akim, Benchiha, Mousticke, software engineer, front-end engineer, web developer, javascript, luxembourg, singapore",
+    "Akim Benchiha, Akim, Benchiha, Mousticke, software engineer, blockchain, ethereum, front-end engineer, web developer, javascript, luxembourg, singapore",
   url: process.env.NEXT_PUBLIC_SITE_URL,
   name: "Akim Benchiha",
   location: "Luxembourg",

@@ -46,7 +46,7 @@ function Project(props, ref) {
 
   return (
     <ProjectSection id={props.id} ref={ref}>
-      <h1 className="title-count">Projects</h1>
+      <h2 className="title-count">Projects</h2>
       <ProjectContainer>
         {projects.map(
           ({ title, type, description, image, tags, source, visit, id }) => (
